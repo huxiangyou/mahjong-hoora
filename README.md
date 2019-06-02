@@ -95,7 +95,7 @@ The following is the instruction on how to use the program.
     * 用数字`1`到`9`表示[数牌](#suupai)，[花色](#shurui)用小写字母`m`表示“[万](#manzu)”、`p`表示“[筒](#pinzu)”、`s`表示“[索](#soozu)”，写在数字后面。如`3s`表示“三索”。
     * 用`1z`到`7z`分别表示[字牌](#jihai)中的“[东](#ton)”、“[南](#nan)”、“[西](#shaa)”、“[北](#pei)”、“[白](#haku)”、“[发](#hatsu)”、“[中](#chun)”。也可以使用大写字母`E`、`S`、`W`、`N`、`P`、`F`、`C`分别表示。
     * 同种[花色](#shurui)的[牌](#hai)可以合并输入。如`1233s`表示“一索、二索、三索、三索”。
-    * 要一次性输入全部[手牌](#tehai)。例如，输入`1112345678999m`即为[万字](#manzu)[纯正九莲宝灯](junseichuurenpouton)[听牌](#tenpai)时的[手牌](#tehai)； `123m456p789s111zCC`即表示“一二三万、四五六筒、七八九索、东东东、中中”。
+    * 要一次性输入全部[手牌](#tehai)。例如，输入`1112345678999m`即为[万子](#manzu)[纯正九莲宝灯](junseichuurenpouton)[听牌](#tenpai)时的[手牌](#tehai)； `123m456p789s111zCC`即表示“一二三万、四五六筒、七八九索、东东东、中中”。
     * 注意：不能输入[杠子](#kantsu)；如果手牌中有[杠子](#kantsu)，按[刻子](#kootsu)输入，或者不输入。
     * 输入完成后，按回车(`Enter`)。
 * Input [tehai](#tehai):
@@ -438,7 +438,7 @@ When inputting [tehai](#tehai), if it has input that can not be understood by th
     `T` is not for [ton](#ton) or [chun](#chun); `N` is for [north](#pee) instead of [nan](#nan); `S` is for [south](#nan) instead of [shaa](#shaa); `P` is for [hatsu](#hatsu) instead of [pee](#pee).
         * 可以用`D`表示[白](#hatsu)；可以用`H`或`R`表示[发](#hatsu)。  
         `D` is for [hatsu](#hatsu); `H` and `R` are for [hatsu](#hatsu).
-        * 也可以用汉字`東`、`东`、`南`、`西`、`北`、`白`、`發`、`発`、`发`、`中`。
+        * 也可以用汉字`東`、`东`、`南`、`西`、`北`、`白`、`發`、`発`、`发`、`中`。  
         Kanji `東`, `东`, `南`, `西`, `北`, `白`, `發`, `発`, `发`, `中` can also be used.
     * `0m`、`0p`、`0s`用来表示[红宝牌](#akadora)，但不能计入[番数](#hansuu)。  
     `0m`, `0p`, `0s` are used for [akadora](#akadora), but are not counted into the [hansuu](#hansuu).
@@ -482,8 +482,12 @@ This program has no English version now.
     * 罗马字版中的文字部分亦为英语，可暂时使用它代替。  
     The texts in Romaji are also in English. Temporarily use it as an alternative.
 
-如果你发现了其他问题，请在[Issues](https://github.com/huxiangyou/mahjong-hoora/issues)中反馈。  
-If you find any other issues, plear tell me at [Issues](https://github.com/huxiangyou/mahjong-hoora/issues).
+如果你发现了其他问题，请在[Issues](https://github.com/huxiangyou/mahjong-hoora/issues)中报告。  
+If you find any other issues, plear report at [Issues](https://github.com/huxiangyou/mahjong-hoora/issues).
+
+你可以使用中文、英语或日语报告。  
+You can use Chinese, English or Japanese to report.  
+中国語、英語、または日本語で報告してください。
 
 ## 性能 Performance
 
