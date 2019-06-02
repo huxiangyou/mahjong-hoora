@@ -8,26 +8,21 @@ This document is in Chinese and English. The proper nouns in English use Romaji 
 
 ## 概况 Overview
 
-![version: 2.0.1](https://img.shields.io/badge/version-2.0.1-lightgrey.svg)
-![python 3.7.1](https://img.shields.io/badge/python-3.7.1-blue.svg?logo=python)
-![python 3.7.2](https://img.shields.io/badge/python-3.7.2-blue.svg?logo=python)
-![python 3.7.3](https://img.shields.io/badge/python-3.7.3-blue.svg?logo=python)  
-![tests: passed](https://img.shields.io/badge/tests-100%25_passed,_0%25_failed-brightgreen.svg)
-![checks: passed](https://img.shields.io/badge/checks-100%25_passed,_0%25_errors-brightgreen.svg)
+![version: 2.0.2](https://img.shields.io/badge/version-2.0.1-lightgrey.svg)
+![python 3.7.1 3.7.2 3.7.3](https://img.shields.io/badge/python-3.7.1%20|%203.7.2%20|%203.7.3-blue.svg?logo=python)  
+![tests: passed](https://img.shields.io/badge/tests-passed-brightgreen.svg)
+![checks: passed](https://img.shields.io/badge/checks-passed-brightgreen.svg)
 ![build: passing](https://img.shields.io/badge/build-passing-brightgreen.svg)  
 ![quality: good](https://img.shields.io/badge/quality-good-brightgreen.svg)
 ![performance: good](https://img.shields.io/badge/performance-good-brightgreen.svg)
-![coverge: not tested](https://img.shields.io/badge/coverge-not_tested-lightgrey.svg)
-![techdebt: little](https://img.shields.io/badge/techdebt-little-yellowgreen.svg)
-![dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen.svg)
-![vulnerability: not tested](https://img.shields.io/badge/vulnerability-not_tested-lightgrey.svg)  
+![coverge: 94%](https://img.shields.io/badge/coverge-94%-green.svg)  
 [![issues: as many as expected](https://img.shields.io/badge/issues-as_many_as_expected-red.svg)](#已知问题-known-issues)
 ![bugs: 0](https://img.shields.io/badge/bugs-0-brightgreen.svg)
 ![errors: 0](https://img.shields.io/badge/errors-0-brightgreen.svg)
 ![warnings: 0](https://img.shields.io/badge/warnings-0-brightgreen.svg)  
 ![release date: June 2019](https://img.shields.io/badge/release_date-June_2019-lightgrey.svg)
 ![maintenance: yes](https://img.shields.io/badge/maintenance-yes-brightgreen.svg)  
-![code size: 21.3 kB](https://img.shields.io/badge/code_size-21.3_kB-green.svg)
+![code size: 21.4 kB](https://img.shields.io/badge/code_size-21.4_kB-green.svg)
 ![coded on Visual Studio Code](https://img.shields.io/badge/coded_on-Visual_Studio_Code-lightgrey.svg?logo=Visual%20Studio%20Code)
 ![coded on Sublime](https://img.shields.io/badge/coded_on-Sublime-lightgrey.svg?logo=sublime%20text)
 ![coded on Atom](https://img.shields.io/badge/coded_on-Atom-lightgrey.svg?logo=atom)
@@ -393,12 +388,18 @@ Added the test function. A [tehai](#tehai) can be randomly generated for testing
 3. 增加计时功能。当计算耗时超过1秒时，显示计算用时。  
 Added the timing function. When the calculation takes more than 1 second, the calculation time will be displayed.
 
-### version 2.1
+### version 2.0.1
 2019年4月21日  
 April 21, 2019
 
 1. 对性能做出了优化。  
 An improvement on the performance.
+
+2019年6月2日  
+June 2, 2019
+
+1. 修复几个[役](#yaku)的判断错误。  
+Fixed bugs of the misjudgments of several [yaku](#yaku).
 
 ## 已知问题 Known issues
 

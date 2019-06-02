@@ -22,6 +22,9 @@ def test():
 		"1234445677889p",#from majsoul 2018 TOP 14 by Yezhicha
 		"22266688m22p222s",#from majsoul 2018 TOP 5 by Longling
 		"22223334445556",
+		"1112233778899",
+		"123m11233p999s44z",
+		"123m1123399p999s",
 		"22406m34p123567s",#from majsoul introduction
 		"123456789p1112s",#from majsoul introduction
 		"22406m34p123567s 4s",#from majsoul introduction

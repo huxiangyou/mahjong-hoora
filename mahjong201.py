@@ -15,7 +15,7 @@ check hoora or tenpai in Japanese mahjong
 for details, check README.md
 """
 
-import datetime
+import time
 import sys
 import test
 from lang import romaji, kanji, katakana, ja, zh
@@ -178,7 +178,7 @@ def yaku_and_output(tehai9,hoorakei,did_tsumo,is_karaten,tsumohai,dahai,is_numbe
 			hansuu+=2#not counting kuisagari
 
 		#honchantaiyaochuu
-		if len(hoorakei)==5 and all(i[1] in (1,11,21) or i[3] in (9,19,29) or i[1]>30 for i in hoorakei) and any(i[0]=='s' for i in hoorakei) and 0<sum(tehai9[31:])<14:
+		if len(hoorakei)==5 and all(i[1] in (1,11,21,9,19,29) or i[3] in (9,19,29) or i[1]>30 for i in hoorakei) and any(i[0]=='s' for i in hoorakei) and 0<sum(tehai9[31:])<14:
 			yaku.append(s.honchantaiyaochuu)
 			hansuu+=2#not counting kuisagari
 
@@ -208,8 +208,8 @@ def yaku_and_output(tehai9,hoorakei,did_tsumo,is_karaten,tsumohai,dahai,is_numbe
 
 		#shousangen
 		if (['j',35,35,None]==hoorakei[0] and ['k',36,36,36] in hoorakei and ['k',37,37,37] in hoorakei) or \
-		(['k',35,35,35]==hoorakei[0] and ['j',36,36,None] in hoorakei and ['k',37,37,37] in hoorakei) or \
-		(['k',35,35,35]==hoorakei[0] and ['k',36,36,36] in hoorakei and ['j',37,37,None] in hoorakei):
+		(['k',35,35,35] in hoorakei and ['j',36,36,None]==hoorakei[0] and ['k',37,37,37] in hoorakei) or \
+		(['k',35,35,35] in hoorakei and ['k',36,36,36] in hoorakei and ['j',37,37,None]==hoorakei[0]):
 			yaku.append(s.shousangen)
 			hansuu+=2
 
@@ -219,7 +219,7 @@ def yaku_and_output(tehai9,hoorakei,did_tsumo,is_karaten,tsumohai,dahai,is_numbe
 			hansuu+=3#not counting kuisagari
 
 		#junchantaiyaochuu
-		if len(hoorakei)==5 and all(i[1] in (1,11,21) or i[3] in (9,19,29) and i[1]<30 for i in hoorakei) and any(i[0]=='s' for i in hoorakei):
+		if len(hoorakei)==5 and all(i[1] in (1,11,21,9,19,29) or i[3] in (9,19,29) and i[1]<30 for i in hoorakei) and any(i[0]=='s' for i in hoorakei):
 			yaku.append(s.junchantaiyaochuu)
 			hansuu+=3#not counting kuisagari
 
@@ -276,7 +276,7 @@ def yaku_and_output(tehai9,hoorakei,did_tsumo,is_karaten,tsumohai,dahai,is_numbe
 			is_yakuman=True
 
 		#shousuushii
-		if all(hoorakei[0]==['j',i,i,None] for i in range(31,35)) and all(hoorakei[0]==['j',i,i,None] or ['k',i,i,i] in hoorakei for i in range(31,35)):
+		if any(hoorakei[0]==['j',i,i,None] for i in range(31,35)) and all(hoorakei[0]==['j',i,i,None] or ['k',i,i,i] in hoorakei for i in range(31,35)):
 			yaku.append(s.shousuushii)
 			hansuu+=13
 			is_yakuman=True
@@ -462,7 +462,7 @@ def main(tehai=None,tehai1=None,dahai=False,is_number_only=False):
 					shurui_used=False
 				elif tehai_i.isdecimal():
 					if shurui_now!=None:
-						if tehai_i=='0':
+						if tehai_i=='0' and shurui_now in (0,1,2):
 							tehai1.append(5+shurui_now*10)
 							if shurui_now==0:
 								has_0m=True
@@ -470,6 +470,9 @@ def main(tehai=None,tehai1=None,dahai=False,is_number_only=False):
 								has_0p=True
 							elif shurui_now==2:
 								has_0s=True
+						elif tehai_i in ('0','8','9') and shurui_now==3:
+							invalid_inputs.insert(0,tehai_i+'z')
+							shurui_used=True
 						else:
 							tehai1.append(int(tehai_i)+shurui_now*10)
 						shurui_used=True
@@ -548,7 +551,7 @@ def main(tehai=None,tehai1=None,dahai=False,is_number_only=False):
 	if not dahai and 50<haisuu:
 		if input(s.low_speed)!='':
 			return
-	start_time=datetime.datetime.now()
+	start_time=time.time()
 
 	for tsumohai in range(1,10 if is_number_only else 38):
 		if tsumohai%10==0:
@@ -684,8 +687,8 @@ def main(tehai=None,tehai1=None,dahai=False,is_number_only=False):
 		print(s.nooten)
 
 	#time spent
-	end_time=datetime.datetime.now()
-	time_spent=(end_time-start_time).total_seconds()
+	end_time=time.time()
+	time_spent=end_time-start_time
 	if not dahai and time_spent>1.0:
 		print(s.time_spent.format(round(time_spent,1)))
 
