@@ -37,28 +37,40 @@ This document is in Chinese and English. The proper nouns in English use Romaji 
 此应用程序的功能是查看日本麻将中[手牌](#tehai)的[听牌](#tenpai)及[和牌](#hoora)的情况。  
 An application that checks whether it's [tenpai](#tenpai) and [hoora](#hoora) of a [tehai](#tehai) in Japanese Mahjong.
 
-`Version 0.0` 胡祥又写于2018年12月17日；  
-`Version 1.0` 胡祥又写于2019年2月9日；  
-`Version 1.1` 胡祥又写于2019年2月20日；  
-`Version 1.2` 胡祥又写于2019年3月20日；  
-`Version 2.0` 胡祥又写于2019年4月14日。  
-`Version 0.0` coded by Hu Xiangyou on December 17, 2018;  
-`Version 1.0` coded by Hu Xiangyou on February 9, 2019;  
-`Version 1.1` coded by Hu Xiangyou on February 20, 2019;  
-`Version 1.2` coded by Hu Xiangyou on March 20, 2019;  
-`Version 2.0` coded by Hu Xiangyou on April 14, 2019.
+`version 0.0` 胡祥又写于2018年12月17日；  
+`version 1.0` 胡祥又写于2019年2月9日；  
+`version 1.1` 胡祥又写于2019年2月20日；  
+`version 1.2` 胡祥又写于2019年3月20日；  
+`version 2.0` 胡祥又写于2019年4月14日。  
+`version 0.0` coded by Hu Xiangyou on December 17, 2018;  
+`version 1.0` coded by Hu Xiangyou on February 9, 2019;  
+`version 1.1` coded by Hu Xiangyou on February 20, 2019;  
+`version 1.2` coded by Hu Xiangyou on March 20, 2019;  
+`version 2.0` coded by Hu Xiangyou on April 14, 2019.
 
 ## 注意 Note
 
 * 此程序只能简单分析[听牌](#tenpai)及[和牌](#hoora)的情况，而不能分析对局场上的情况，比如不能知道[场风](#chanfon)和[自风](#menfon)，不能判断是否有[立直](#riichi)、[抢杠](#chankan)等[役](#yaku)，不能准确判断[平和](#pinfu)中的[雀头](#jantou)是否为[场风](#chanfon)或[自风](#menfon)。同时，因为不能输入[副露](#fuuro)，包含[杠子](#kantsu)，也就不能准确判断[三暗刻](#sanankoo)、[三杠子](#sankantsu)等[役](#yaku)。详情请见下文[已知问题](#已知问题-Known-Issues)一节。  
 This program can only analyze the [tenpai](#tenpai) and [hoora](#hoora), but not the details of the game. For example, it can not get the [chanfon](#chanfon) or the [menfon](#menfon), can not get whether [riichi](#riichi), [chankan](#chankan), or other [yaku](#yaku), can not accurately get whether the [jantou](#jantou) in a [pinfu](#pinfu) is [chanfon](#chanfon) or the [menfon](#menfon) or not. Besides, you cannot enter [fuuro](#fuuro), including [kantsu](#kantsu), so it can not accurately get  [sanankoo](#sanankoo), [sankantsu](#sankantsu), and other [yaku](#yaku). See the [Known Issues](#已知问题-Known-Issues) section below for details.
 
+## 文件 Files
+
+* `mahjong.py` (`version 1.2`)（可能不可用）(Maybe not available)
+* `mahjong20.py` (`version 2.0`)
+* `mahjong201.py` (`version 2.0.1`)
+* `mahjong201.exe` （可执行文件）(Executable file)
+* `sansoo.png` （图标原图）(Original picture of the icon)
+* `test.py` （测试库）(Test database)
+* `lang/` （语言库）(Language databases)
+* `sansoo.ico` （图标）(The icon)
+* `README.md` （说明文件）(Description file)
+
 ## 使用方法 Instructions
 
 * 如果你完全不懂什么GitHub啊什么Python啊而却又想使用此程序：  
 If you don't know anything about GitHub or Python or something, but want to use this application:
-    * 你需要从GitHub下载此应用的文件。点击此项目右上方的`Clone or download`，然后点击`Download ZIP`，下载文件。下载完成后，解压该压缩文件。  
-    You need to download the files for this application from GitHub. Click on `Clone or download` at the top right of the repository, then click `Download ZIP` to download the file. After the download is complete, extract the compressed file.
+    * 你需要从GitHub下载此应用的文件。点击此项目右上方的`Clone or download`，然后点击[`Download ZIP`](https://github.com/huxiangyou/mahjong-hoora/archive/master.zip)，下载文件。下载完成后，解压该压缩文件。  
+    You need to download the files for this application from GitHub. Click on `Clone or download` at the top right of the repository, then click [`Download ZIP`](https://github.com/huxiangyou/mahjong-hoora/archive/master.zip) to download the file. After the download is complete, extract the compressed file.
     * 在解压出的文件中，找到`mahjong201.exe`，即为程序的可执行文件，打开它即可直接运行程序。  
     In the extracted files, find `mahjong201.exe`, which is the executable file of the program. Open it to run the program directly.
     * 程序默认为简体中文（因为我说中文）。如果需要切换至其他语言，在输入[手牌](#tehai)的地方，直接输入语言对应的代码。
@@ -205,7 +217,7 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 |:--:|:--:|:--:|:--:|:--:|
 | <a name="hai">hai</a> | 牌 | 牌 | tile | |
 | <a name="shurui">shurui</a> | 種類 | 花色 | | |
-| m<br><a name="manzu">manzu</a> | 萬 | 万 | character  | 程序中使用`manzu`来用表示[手牌](#tehai)中有哪些[万子](#manzu)，用`manzu9`来表示1到9万各有几张。<br>In programming, `manzu` is used to list what [manzu](#manzu) are there in the [tehai](#tehai), and `manzu9` is used to list how many iiman to chuuman are there. |
+| m<br><a name="manzu">manzu</a> | 萬 | 万 | character | 程序中使用`manzu`来用表示[手牌](#tehai)中有哪些[万子](#manzu)，用`manzu9`来表示1到9万各有几张。<br>In programming, `manzu` is used to list what [manzu](#manzu) are there in the [tehai](#tehai), and `manzu9` is used to list how many iiman to chuuman are there. |
 | p<br><a name="pinzu">pinzu</a> | 筒 | 筒<br>饼 | dot | 程序中使用`pinzu`来用表示[手牌](#tehai)中有哪些[筒子](#pinzu)，用`pinzu9`来表示1到9筒各有几张。<br>In programming, `pinzu` is used to list what [pinzu](#pinzu) are there in the [tehai](#tehai), and `pinzu9` is used to list how many from iipin to chuupin are there. |
 | s<br><a name="soozu">soozu</a> | 索 | 索<br>条 | bamboo | 程序中使用`soozu`来用表示[手牌](#tehai)中有哪些[索子](#soozu)，用`soozu9`来表示1到9索各有几张。<br>In programming, `soozu` is used to list what [soozu](#soozu) are there in the [tehai](#tehai), and `soozu9` is used to list how many from iisoo to chuusoo are there. |
 | <a name="ton">ton</a> | 東 | 东<br>东风 | East | |
@@ -225,12 +237,12 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 | <a name="tehai">tehai</a> | 手牌 | 手牌 | hand | |
 | <a name="fuuro">fuuro</a> | 副露 | 鸣牌 | call | |
 | <a name="juntehai">juntehai</a> | 純手牌 | | | 除[鸣牌](#fuuro)外的[手牌](#tehai)。<br>[Tehai](#tehai) except [fuuro](#fuuro) ones. |
-| <a name="agarihai">agarihai</a> | 和了牌 |  | | |
-| <a name="taapai">taapai</a> | 多牌 | 大相公 |  | |
-| <a name="shaopai">shaopai</a> | 少牌 | 小相公 |  | |
-| <a name="hoorakei">hoorakei</a> | 和了形 | 和牌型 |  | |
-| <a name="ippankei">ippankei</a> | 一般形 | 普通型 |  | 不是国士无双和七对子的和牌型。<br>[Hoorakei](#hoorakei) that is not [kokushimusou](#kokushimusou) or [chiitoitsu](#chiitoitsu). |
-| <a name="tenpaikei">tenpaikei</a> | 聴牌形 | 听牌型 |  | |
+| <a name="agarihai">agarihai</a> | 和了牌 | | | |
+| <a name="taapai">taapai</a> | 多牌 | 大相公 | | |
+| <a name="shaopai">shaopai</a> | 少牌 | 小相公 | | |
+| <a name="hoorakei">hoorakei</a> | 和了形 | 和牌型 | | |
+| <a name="ippankei">ippankei</a> | 一般形 | 普通型 | | 不是国士无双和七对子的和牌型。<br>[Hoorakei](#hoorakei) that is not [kokushimusou](#kokushimusou) or [chiitoitsu](#chiitoitsu). |
+| <a name="tenpaikei">tenpaikei</a> | 聴牌形 | 听牌型 | | |
 | <a name="mentsu">mentsu</a> | 面子 | 顺刻杠子 | set | |
 | <a name="kootsu">kootsu</a> | 刻子 | 刻子 | triplet | |
 | <a name="shuntsu">shuntsu</a> | 順子 | 顺子 | sequence | |
@@ -250,36 +262,36 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 | <a name="tenhai">tenpai</a> | 聴牌 | 听牌 | ready | |
 | <a name="nooten">nooten</a> | 不聴 | 没有听牌 | not ready | |
 | <a name="hoora">hoora</a> | 和了 | 和牌 | win | |
-| <a name="keishikitenpai">keishikitenpai</a> | 形式聴牌 | 形式听牌 |  | |
-| <a name="karaten">karaten</a> | 空聴 | 空听 |  | |
+| <a name="keishikitenpai">keishikitenpai</a> | 形式聴牌 | 形式听牌 | | |
+| <a name="karaten">karaten</a> | 空聴 | 空听 | | |
 | <a name="chanfon">chanfon</a> | 圏風 | 场风 | prevalent wind | |
 | <a name="menfon">menfon</a> | 門風 | 自风 | seat wind | |
-| <a name="yaku">yaku</a> | 役 | 役 |  | |
-| <a name="han">han</a> | 飜 | 番 |  | |
-| <a name="hansuu">hansuu</a> | 飜数 | 番数 |  | |
-| <a name="koutenhou">koutenhou</a> | 高点法 | 就高不就低原则 |  | |
-| <a name="kouten">kouten</a> | 高点 | 高分 |  | |
-| <a name="takame">takame</a> | 高目 | 高分和牌 |  | |
-| <a name="yasume">yasume</a> | 安目 | 低分和牌 |  | |
-| <a name="dotakame">dotakame</a> | ド高目 | 最高分和牌 |  | |
-| <a name="mangan">mangan</a> | 満貫 | 满贯 |  | |
-| <a name="haneman">haneman</a> | 跳満 | 跳满 |  | |
-| <a name="baiman">baiman</a> | 倍満 | 倍满 |  | |
-| <a name="sanbaiman">sanbaiman</a> | 三倍満 | 三倍满 |  | |
-| <a name="yakuman">yakuman</a> | 役満 | 役满 |  | |
-| <a name="kazoeyakuman">kazoeyakuman</a> | 数え役満 | 累计役满 |  | |
-| <a name="daburuyakuman">daburuyakuman</a> | ダブル役満 | 两倍役满 |  | |
-| <a name="toripuruyakuman">toripuruyakuman</a> | トリプル役満 | 三倍役满 |  | |
-| <a name="yonbaiyakuman">yonbaiyakuman</a> | 四倍役満 | 四倍役满 |  | |
-| <a name="gobaiyakuman">gobaiyakuman</a> | 五倍役満 | 五倍役满 |  | |
-| <a name="rokubaiyakuman">rokubaiyakuman</a> | 六倍役満 | 六倍役满 |  | |
+| <a name="yaku">yaku</a> | 役 | 役 | | |
+| <a name="han">han</a> | 飜 | 番 | | |
+| <a name="hansuu">hansuu</a> | 飜数 | 番数 | | |
+| <a name="koutenhou">koutenhou</a> | 高点法 | 就高不就低原则 | | |
+| <a name="kouten">kouten</a> | 高点 | 高分 | | |
+| <a name="takame">takame</a> | 高目 | 高分和牌 | | |
+| <a name="yasume">yasume</a> | 安目 | 低分和牌 | | |
+| <a name="dotakame">dotakame</a> | ド高目 | 最高分和牌 | | |
+| <a name="mangan">mangan</a> | 満貫 | 满贯 | | |
+| <a name="haneman">haneman</a> | 跳満 | 跳满 | | |
+| <a name="baiman">baiman</a> | 倍満 | 倍满 | | |
+| <a name="sanbaiman">sanbaiman</a> | 三倍満 | 三倍满 | | |
+| <a name="yakuman">yakuman</a> | 役満 | 役满 | | |
+| <a name="kazoeyakuman">kazoeyakuman</a> | 数え役満 | 累计役满 | | |
+| <a name="daburuyakuman">daburuyakuman</a> | ダブル役満 | 两倍役满 | | |
+| <a name="toripuruyakuman">toripuruyakuman</a> | トリプル役満 | 三倍役满 | | |
+| <a name="yonbaiyakuman">yonbaiyakuman</a> | 四倍役満 | 四倍役满 | | |
+| <a name="gobaiyakuman">gobaiyakuman</a> | 五倍役満 | 五倍役满 | | |
+| <a name="rokubaiyakuman">rokubaiyakuman</a> | 六倍役満 | 六倍役满 | | |
 | <a name="menzenchin">menzenchin</a> | 門前清 | 门前清 | concealed | |
-| <a name="kuisagari">kuisagari</a> | 喰い下がり | 副露减一番 |  | |
-| <a name="menzenyaku">menzenyaku</a> | 門前役 | 门前清限定役 |  | |
-| <a name="kuisagariyaku">kuisagariyaku</a> | 喰い下がり役 | 副露减一番的役 |  | |
-| <a name="dora">dora</a> | ドラ | 宝牌 |  | |
+| <a name="kuisagari">kuisagari</a> | 喰い下がり | 副露减一番 | | |
+| <a name="menzenyaku">menzenyaku</a> | 門前役 | 门前清限定役 | | |
+| <a name="kuisagariyaku">kuisagariyaku</a> | 喰い下がり役 | 副露减一番的役 | | |
+| <a name="dora">dora</a> | ドラ | 宝牌 | | |
 | <a name="akadora">akadora</a> | 赤ドラ | 红宝牌 | red tile | |
-| <a name="riichi">riichi</a> | 立直 | 立直 |  | |
+| <a name="riichi">riichi</a> | 立直 | 立直 | | |
 | <a name="ippatsu">ippatsu</a> | 一発 | 一发 | one shot | |
 | <a name="menzenchintsumohoo">menzenchintsumohoo</a> | 門前清自摸和 | 不求人 | fully concealed hand | |
 | <a name="tanyaochuu">tanyaochuu</a> | 断么九 | 断幺九 | all simples | |
@@ -291,7 +303,7 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 | <a name="renfonpai">renfonpai</a> | 連風牌 | 连风牌 | | |
 | <a name="rinshankaihou">rinshankaihou</a> | 嶺上開花 | 岭上开花 | out on a replacement | |
 | <a name="chankan">chankan</a> | 槍槓 | 抢杠 | robbing the kong | |
-| <a name="haiteimooyue">haiteimooyue</a> | 海底摸月 | 妙手回春 | 	last tile draw | |
+| <a name="haiteimooyue">haiteimooyue</a> | 海底摸月 | 妙手回春 | last tile draw | |
 | <a name="hooteiraoyui">hooteiraoyui</a> | 河底撈魚 | 海底捞月 | last tile discard | |
 | <a name="dabururiichi">dabururiichi</a> | ダブル立直 | 二重立直 | | |
 | <a name="sanshokudookoo">sanshokudoujun</a> | 三色同順 | 三色三同顺 | mixed triple chow | |
@@ -390,7 +402,7 @@ An improvement on the performance.
 
 ## 已知问题 Known issues
 
-[i1]: https://img.shields.io/badge/issue-soslved-brightgreen.svg
+[i1]: https://img.shields.io/badge/issue-solved-brightgreen.svg
 [i2]: https://img.shields.io/badge/issue-improved-green.svg
 [i3]: https://img.shields.io/badge/issue-improving-yellowgreen.svg
 [i4]: https://img.shields.io/badge/issue-not_to_be_solved-red.svg
@@ -437,8 +449,8 @@ When inputting [tehai](#tehai), if it has input that can not be understood by th
 4. [听牌型](#tenpaikei)或[和牌型](#hoorakei)的输出顺序没有规律。  
 The order of [tenpaikei](#tenpaikei) or [hoorakei](#hoorakei) outputs are not regular.  
 ![improving][i4]
-    * 在version 1中，[听牌型](#tenpaikei)或[和牌型](#hoorakei)是按照[雀头](#jantou)和[面子](#mentsu)排序并输出的。但这样会非常占用内存，导致计算时间变长。在version 2中，取消了这种输出方式，改为按照计算顺序输出。  
-    In version 1, [tenpaikei](#tenpaikei) or [hoorakei](#hoorakei) are output sorted by [jantou](#jantou) and [mentsu](#mentsu). But this will take up a lot of memory, which will make the calculation time longer. In version 2, this output mode was canceled, and outputs are in the order of calculation.
+    * 在`version 1`中，[听牌型](#tenpaikei)或[和牌型](#hoorakei)是按照[雀头](#jantou)和[面子](#mentsu)排序并输出的。但这样会非常占用内存，导致计算时间变长。在`version 2`中，取消了这种输出方式，改为按照计算顺序输出。  
+    In `version 1`, [tenpaikei](#tenpaikei) or [hoorakei](#hoorakei) are output sorted by [jantou](#jantou) and [mentsu](#mentsu). But this will take up a lot of memory, which will make the calculation time longer. In `version 2`, this output mode was canceled, and outputs are in the order of calculation.
 5. 此程序不能准确分析部分[役](#yaku)。  
 Some [yaku](#yaku) cannot be analyzed accurately.  
 ![improving][i4]
@@ -470,13 +482,19 @@ This program has no English version now.
     * 罗马字版中的文字部分亦为英语，可暂时使用它代替。  
     The texts in Romaji are also in English. Temporarily use it as an alternative.
 
-如果你发现了其他问题，请在[Issue](https://github.com/)中反馈。  
-If you find any other issues, plear tell me at [Issue](https://github.com/).
+如果你发现了其他问题，请在[Issues](https://github.com/huxiangyou/mahjong-hoora/issues)中反馈。  
+If you find any other issues, plear tell me at [Issues](https://github.com/huxiangyou/mahjong-hoora/issues).
 
 ## 性能 Performance
 
-version 2.0后，性能已有大幅改善。此处不再赘述。  
-After version 2.0, performance has dramatically improved. So I won't go into details here.
+`version 2.0`后，性能已有大幅改善。此处不再赘述。  
+After `version 2.0`, performance has dramatically improved. So I won't go into details here.
+
+我使用如下输入进行测试。在`version 1.2`中，完整计算时间为数分钟；而在`version 2.0`中，只需数秒。  
+I used the following input to test. In `version 1.2`, the full calculation time is a few minutes; in `version 2.0,` it takes only a few seconds.
+
+输入：Input:
+`11111111111122222222222233333333333344444444444455555555555666666777777888888999999`
 
 ## 彩蛋 Easter eggs
 
