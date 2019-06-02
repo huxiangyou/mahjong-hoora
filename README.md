@@ -15,7 +15,7 @@ This document is in Chinese and English. The proper nouns in English use Romaji 
 ![build: passing](https://img.shields.io/badge/build-passing-brightgreen.svg)  
 ![quality: good](https://img.shields.io/badge/quality-good-brightgreen.svg)
 ![performance: good](https://img.shields.io/badge/performance-good-brightgreen.svg)
-![coverge: 94%](https://img.shields.io/badge/coverge-94%-green.svg)  
+![coverge: 94%](https://img.shields.io/badge/coverge-94%25-green.svg)  
 [![issues: as many as expected](https://img.shields.io/badge/issues-as_many_as_expected-red.svg)](#已知问题-known-issues)
 ![bugs: 0](https://img.shields.io/badge/bugs-0-brightgreen.svg)
 ![errors: 0](https://img.shields.io/badge/errors-0-brightgreen.svg)
@@ -50,7 +50,7 @@ This program can only analyze the [tenpai](#tenpai) and [hoora](#hoora), but not
 
 ## 文件 Files
 
-* `mahjong.py` (`version 1.2`)（可能不可用）(Maybe not available)
+* `mahjong.py` (`version 1.2`)（部分内容已不可用）(Part of which is no longer available)
 * `mahjong20.py` (`version 2.0`)
 * `mahjong201.py` (`version 2.0.1`)
 * `mahjong201.exe` （可执行文件）(Executable file)
@@ -100,8 +100,8 @@ The following is the instruction on how to use the program.
     * Enter all [tehai](#tehai) in a line. For example, `1112345678999m` is the [tehai](#tehai) of [manzu](#manzu) [junseichuurenpouton](#junseichuurenpouton) [tenpai](#tenpai); `123m456p789s111zCC` is for "ii-ryan-sanman, suu-uu-roopin, chii-paa-chuusoo, ton-ton-ton, chun-chun".
     * Note: Do not input [kantsu](#kantsu); if [tehai](#tehai) has [kantsu](#kantsu), input it as a [kootsu](#kootsu), or just omit it.
     * After the input, press `Enter`。
-* 输入`exit`退出。
-* Input `exit` to exit.
+* 输入`exit`退出。  
+Input `exit` to exit.
 * 输入语言对应的代码来切换语言。
     * 现提供的语言如下：
         * `zh` 中文（简体）
@@ -212,9 +212,9 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 |:--:|:--:|:--:|:--:|:--:|
 | <a name="hai">hai</a> | 牌 | 牌 | tile | |
 | <a name="shurui">shurui</a> | 種類 | 花色 | | |
-| m<br><a name="manzu">manzu</a> | 萬 | 万 | character | 程序中使用`manzu`来用表示[手牌](#tehai)中有哪些[万子](#manzu)，用`manzu9`来表示1到9万各有几张。<br>In programming, `manzu` is used to list what [manzu](#manzu) are there in the [tehai](#tehai), and `manzu9` is used to list how many iiman to chuuman are there. |
-| p<br><a name="pinzu">pinzu</a> | 筒 | 筒<br>饼 | dot | 程序中使用`pinzu`来用表示[手牌](#tehai)中有哪些[筒子](#pinzu)，用`pinzu9`来表示1到9筒各有几张。<br>In programming, `pinzu` is used to list what [pinzu](#pinzu) are there in the [tehai](#tehai), and `pinzu9` is used to list how many from iipin to chuupin are there. |
-| s<br><a name="soozu">soozu</a> | 索 | 索<br>条 | bamboo | 程序中使用`soozu`来用表示[手牌](#tehai)中有哪些[索子](#soozu)，用`soozu9`来表示1到9索各有几张。<br>In programming, `soozu` is used to list what [soozu](#soozu) are there in the [tehai](#tehai), and `soozu9` is used to list how many from iisoo to chuusoo are there. |
+| <a name="manzu">manzu</a> | 萬 | 万 | character | 程序中使用`manzu`来用表示[手牌](#tehai)中有哪些[万子](#manzu)，用`manzu9`来表示1到9万各有几张。<br>In programming, `manzu` is used to list what [manzu](#manzu) are there in the [tehai](#tehai), and `manzu9` is used to list how many iiman to chuuman are there. |
+| <a name="pinzu">pinzu</a> | 筒 | 筒<br>饼 | dot | 程序中使用`pinzu`来用表示[手牌](#tehai)中有哪些[筒子](#pinzu)，用`pinzu9`来表示1到9筒各有几张。<br>In programming, `pinzu` is used to list what [pinzu](#pinzu) are there in the [tehai](#tehai), and `pinzu9` is used to list how many from iipin to chuupin are there. |
+| <a name="soozu">soozu</a> | 索 | 索<br>条 | bamboo | 程序中使用`soozu`来用表示[手牌](#tehai)中有哪些[索子](#soozu)，用`soozu9`来表示1到9索各有几张。<br>In programming, `soozu` is used to list what [soozu](#soozu) are there in the [tehai](#tehai), and `soozu9` is used to list how many from iisoo to chuusoo are there. |
 | <a name="ton">ton</a> | 東 | 东<br>东风 | East | |
 | <a name="nan">nan</a> | 南 | 南<br>南风 | South | |
 | <a name="shaa">shaa</a> | 西 | 西<br>西风 | West | |
@@ -478,10 +478,8 @@ Some [yaku](#yaku) cannot be analyzed accurately.
 6. 此程序暂无英语版。  
 This program has no English version now.  
 ![improving][i3]
-    * 部分内容在英语中没有对应的翻译。  
+    * 部分名词在英语中没有对应的翻译。  
     Some nouns have no translation in English.
-    * 罗马字版中的文字部分亦为英语，可暂时使用它代替。  
-    The texts in Romaji are also in English. Temporarily use it as an alternative.
 
 如果你发现了其他问题，请在[Issues](https://github.com/huxiangyou/mahjong-hoora/issues)中报告。  
 If you find any other issues, plear report at [Issues](https://github.com/huxiangyou/mahjong-hoora/issues).
@@ -503,19 +501,18 @@ I used the following input to test. In `version 1.2`, the full calculation time 
 
 ## 彩蛋 Easter eggs
 
-* 输入18个[白](#haku)(`P`)，除正常的计算外，还会出现“天地创世”(`beginning of the cosmos`)的[听牌型](#tenpaikei)或[和牌型](#hoorakei)，并计算[点数](#tensuu)。  
-When input 18 [haku](#haku)'s, in addition to the normal calculations, the [tenpaikei](#tenpaikei) or [hoorakei](#hoorakei) of the `beginning of the cosmos` will appear, with the calculated [tensuu](#tensuu).
+* 输入18个[白](#haku)(`P`)，除正常的计算外，还会出现“天地创世”(`beginning of the cosmos`)的[和牌型](#hoorakei)，并计算[点数](#tensuu)。  
+When input 18 [haku](#haku)'s, in addition to the normal calculations, the [hoorakei](#hoorakei) of the `beginning of the cosmos` will appear, with the calculated [tensuu](#tensuu).
 
 ```
 输入手牌：PPPPPPPPPPPPPPPPPP
 
-手牌：白 白 白 白 白 白 白 白 白 白 白 白 白 白 白 白 白 白 (18)
+手牌：白白白白白白白白白白白白白白白白白白
 
 白多于4张
 18张手牌，多于14张
 
-和了：
-55z 5555z 5555z 5555z 5555z | 天地创世(140符105番 90865195024359483499283685761351700点)：字一色、三暗刻、四杠子、岭上开花、役牌白4、宝牌72
+和了 | 55z 5555z 5555z 5555z 5555z | 天地创世(140符105番 90865195024359483499283685761351700点)：字一色、三暗刻、四杠子、岭上开花、白4、宝牌72
 ```
 
 ## 许可 License
