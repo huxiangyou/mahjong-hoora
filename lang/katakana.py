@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python3
-#python 3.7.2
+#python 3.7.2 3.7.3
 
 """
 translated by Hu Xiangyou on February 20, 2019
+translated by Hu Xiangyou on June 6, 2019
 """
 
 ask_input_tehai="テハイを　にゅうりょく"
@@ -15,6 +16,7 @@ has_0p="「0p」ふくみ。「5p」と　しました"
 has_0s="「0s」ふくみ。「5s」と　しました"
 has_invalid_input="むこうな　にゅうりょく"
 low_speed="テハイが　おおすぎ。ぞっこうしても　よろしいですか？（ちょくせつ　エンターキーを　おして　ぞっこうします）"
+
 yakuman_level_list=('','やくまん','ダブルやくまん','トリプルやくまん','よんばいやくまん','ごばいやくまん','ろくばいやくまん','ななばいやくまん')
 kazoeyakuman='かぞえやくまん'
 tehai="テハイ"
@@ -23,6 +25,7 @@ more_than_14="{}まいの　テハイは　14ま　いいじょう"
 less_than_13="{}まいの　テハイは　13ま　いいか（フーロありかも）"
 taapai_or_shaopai="{}まいの　テハイは　ターパイ　または　ショーパイ"
 dora='ドラ'
+
 kokushimusoujuusanmen='こくしむそうじゅうさんめんまち'
 kokushimusou='こくしむそう'
 chiitoitsu='チートイツ'
@@ -62,16 +65,28 @@ daisuushii='ダイスーシー'
 sankantsu='サンカンツ'
 suukantsu='スーカンツ'
 beginning_of_the_cosmos='ビギニング・オブ・ザ・コスモス'
+
 hoora="ホーラ"
 fuu="ふう"
 han="はん"
 ten="てん"
 not_hoora="あがらない"
-da="た"
+da="だ"
 karaten="カラテン"
 tenpai="テンパイ"
 nooten="ノーテン"
+
 colon="："
 ideographic_comma="・"
 question_mark="？"
 time_spent="けいさんは　{}びょうを　かかりました"
+
+has_koyaku="こやくを　ゆうこうに　しました"
+not_has_koyaku="こやくを　むこうに　しました"
+uumensai="ウーメンサイ"
+sanrenkoo="サンレンコー"
+isshokusanjun="いっしょくさんじゅん"
+daisharin="だいしゃりん"
+daichikurin="だいちくりん"
+daisuurin="だいすうりん"
+daichisei="ダイチセイ"

@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python3
-#python 3.7.2
+#python 3.7.2 3.7.3
 
 """
 translated by Hu Xiangyou on February 22, 2019
+translated by Hu Xiangyou on June 6, 2019
 """
 
 ask_input_tehai="Input tehai"
@@ -16,6 +17,7 @@ has_0s="Tehai has 0s, taken as 5s"
 has_invalid_input="Tehai has invalid input"
 low_speed="Too many tehai are given. Sure to continue? (Press Enter directly to continue)"
 yakuman_level_list=('','yakuman','daburuyakuman','toripuruyakuman','yonbaiyakuman','gobaiyakuman','rokubaiyakuman','nanabaiyakuman')
+
 kazoeyakuman='kazoeyakuman'
 tehai="tehai"
 more_than_4="{} is more than 4"
@@ -23,6 +25,7 @@ more_than_14="{} tehai is more than 14"
 less_than_13="{} tehai is less than 13 (maybe has fuuro)"
 taapai_or_shaopai="{} tehai, taapai or shaopai"
 dora='dora'
+
 kokushimusoujuusanmen='kokushimusoujuusanmen'
 kokushimusou='kokushimusou'
 chiitoitsu='chiitoitsu'
@@ -62,6 +65,7 @@ daisuushii='daisuushii'
 sankantsu='sankantsu'
 suukantsu='suukantsu'
 beginning_of_the_cosmos='beginning of the cosmos'
+
 hoora="Hoora"
 fuu=" fuu "
 han=" han"
@@ -69,9 +73,20 @@ ten=" ten"
 not_hoora="Not hoora"
 da="da"
 karaten="karaten"
-tenpai="tenpai"
+tenpai="tenpai "
 nooten="Nooten"
+
 colon=": "
 ideographic_comma=", "
 question_mark="(?)"
 time_spent="Calculations took {} seconds"
+
+has_koyaku="Enabled koyaku"
+not_has_koyaku="Disabled koyaku"
+uumensai="uumensai"
+sanrenkoo="sanrenkoo"
+isshokusanjun="isshokusanjun"
+daisharin="daisharin"
+daichikurin="daichikurin"
+daisuurin="daisuurin"
+daichisei="daichisei"

@@ -8,7 +8,7 @@ This document is in Chinese and English. The proper nouns in English use Romaji 
 
 ## 概况 Overview
 
-![version: 2.0.2](https://img.shields.io/badge/version-2.0.1-lightgrey.svg)
+![version: 2.1](https://img.shields.io/badge/version-2.1-lightgrey.svg)
 ![python 3.7.1 3.7.2 3.7.3](https://img.shields.io/badge/python-3.7.1%20|%203.7.2%20|%203.7.3-blue.svg?logo=python)  
 ![tests: passed](https://img.shields.io/badge/tests-passed-brightgreen.svg)
 ![checks: passed](https://img.shields.io/badge/checks-passed-brightgreen.svg)
@@ -17,16 +17,7 @@ This document is in Chinese and English. The proper nouns in English use Romaji 
 ![performance: good](https://img.shields.io/badge/performance-good-brightgreen.svg)
 ![coverge: 94%](https://img.shields.io/badge/coverge-94%25-green.svg)  
 [![issues: as many as expected](https://img.shields.io/badge/issues-as_many_as_expected-red.svg)](#已知问题-known-issues)
-![bugs: 0](https://img.shields.io/badge/bugs-0-brightgreen.svg)
-![errors: 0](https://img.shields.io/badge/errors-0-brightgreen.svg)
-![warnings: 0](https://img.shields.io/badge/warnings-0-brightgreen.svg)  
-![release date: June 2019](https://img.shields.io/badge/release_date-June_2019-lightgrey.svg)
-![maintenance: yes](https://img.shields.io/badge/maintenance-yes-brightgreen.svg)  
-![code size: 21.4 kB](https://img.shields.io/badge/code_size-21.4_kB-green.svg)
-![coded on Visual Studio Code](https://img.shields.io/badge/coded_on-Visual_Studio_Code-lightgrey.svg?logo=Visual%20Studio%20Code)
-![coded on Sublime](https://img.shields.io/badge/coded_on-Sublime-lightgrey.svg?logo=sublime%20text)
-![coded on Atom](https://img.shields.io/badge/coded_on-Atom-lightgrey.svg?logo=atom)
-![coded on python IDLE](https://img.shields.io/badge/coded_on-python_IDLE-lightgrey.svg?logo=python)  
+![bugs: 0](https://img.shields.io/badge/bugs-0-brightgreen.svg)  
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/mit-license.php)
 
 此应用程序的功能是查看日本麻将中[手牌](#tehai)的[听牌](#tenpai)及[和牌](#hoora)的情况。  
@@ -36,12 +27,14 @@ An application that checks whether it's [tenpai](#tenpai) and [hoora](#hoora) of
 `version 1.0` 胡祥又写于2019年2月9日；  
 `version 1.1` 胡祥又写于2019年2月20日；  
 `version 1.2` 胡祥又写于2019年3月20日；  
-`version 2.0` 胡祥又写于2019年4月14日。  
+`version 2.0` 胡祥又写于2019年4月14日；  
+`version 2.1` 胡祥又写于2019年6月6日。  
 `version 0.0` coded by Hu Xiangyou on December 17, 2018;  
 `version 1.0` coded by Hu Xiangyou on February 9, 2019;  
 `version 1.1` coded by Hu Xiangyou on February 20, 2019;  
 `version 1.2` coded by Hu Xiangyou on March 20, 2019;  
-`version 2.0` coded by Hu Xiangyou on April 14, 2019.
+`version 2.0` coded by Hu Xiangyou on April 14, 2019;  
+`version 2.1` coded by Hu Xiangyou on June 6, 2019.
 
 ## 注意 Note
 
@@ -53,21 +46,25 @@ This program can only analyze the [tenpai](#tenpai) and [hoora](#hoora), but not
 * `mahjong.py` (`version 1.2`)（部分内容已不可用）(Part of which is no longer available)
 * `mahjong20.py` (`version 2.0`)
 * `mahjong201.py` (`version 2.0.1`)
-* `mahjong201.exe` （可执行文件）(Executable file)
-* `sansoo.png` （图标原图）(Original picture of the icon)
+* `mahjong210.py` (`version 2.1`)
+* `mahjong201.exe` (`version 2.0.1`)（可执行文件）(Executable file)
+* `mahjong210.exe` (`version 2.1`)（可执行文件）(Executable file)
 * `test.py` （测试库）(Test database)
-* `lang/` （语言库）(Language databases)
+* `lang\romaji`, `lang\kanji`, `lang\katakana`, `lang\ja`, `lang\zh` （语言库）(Language databases)
+* `sansoo.png` （图标原图）(Original picture of the icon)
 * `sansoo.ico` （图标）(The icon)
 * `README.md` （说明文件）(Description file)
+* `算法.png` （编写程序时打的草稿，中文，2019年2月9日）(A draft I did when I was programming, in Chinese, February 9, 2019)
+* `test_performance.txt` （测试性能时做的测试，2019年4月14日）(A test when tesing the performance, April 14, 2019)
 
 ## 使用方法 Instructions
 
 * 如果你完全不懂什么GitHub啊什么Python啊而却又想使用此程序：  
 If you don't know anything about GitHub or Python or something, but want to use this application:
-    * 你需要从GitHub下载此应用的文件。点击此项目右上方的`Clone or download`，然后点击[`Download ZIP`](https://github.com/huxiangyou/mahjong-hoora/archive/master.zip)，下载文件。下载完成后，解压该压缩文件。  
-    You need to download the files for this application from GitHub. Click on `Clone or download` at the top right of the repository, then click [`Download ZIP`](https://github.com/huxiangyou/mahjong-hoora/archive/master.zip) to download the file. After the download is complete, extract the compressed file.
-    * 在解压出的文件中，找到`mahjong201.exe`，即为程序的可执行文件，打开它即可直接运行程序。  
-    In the extracted files, find `mahjong201.exe`, which is the executable file of the program. Open it to run the program directly.
+    * 点击[这里](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong210.exe)下载程序。在电脑上直接打开运行。  
+    Click [here](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong210.exe) to download the program. Directly open it on a computer.
+    * 如果你不需要`version 2.1`中的[新功能](#version-2.1)，点击[这里](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong201.exe)下载之前的版本`version 2.0.1`。  
+    If you don't need the [new functions](#version-2.1) in `version 2.1`, click [here](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong201.exe) to download the older `version 2.0.1`.
     * 程序默认为简体中文（因为我说中文）。如果需要切换至其他语言，在输入[手牌](#tehai)的地方，直接输入语言对应的代码。
         * 现提供的语言如下：
             * `zh` 中文（简体）
@@ -116,6 +113,8 @@ Input `exit` to exit.
         * `kanji` Japanese (Kanji)
         * `katakana` Japanese (Katakana)
         * `ja` Japanese (General)
+* 输入`koyaku`开启[古役](#koyaku)。  
+Input `koyaku` to enable [koyaku](#koyaku).
 * 当输入的[手牌](#tehai)为14张或(3n+2)张时，则判断是否[和了](#hoora)。
     * 如果[和了](#hoora)，则输出[和牌型](#hoorakei)及可能的[役](#yaku)。
     * 如果没有[和了](#hoora)，但已[听牌](#tenpai)，则判断[舍张](#sutehai)是哪张即可[听牌](#tenpai)，并输出[听牌型](#tenpaikei)及可能的[役](#yaku)。
@@ -211,7 +210,7 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 | 罗马字<br>Romaji<br> | 日语<br>Japanese | 中文<br>Chinese | 英语<br>English | 备注 Note |
 |:--:|:--:|:--:|:--:|:--:|
 | <a name="hai">hai</a> | 牌 | 牌 | tile | |
-| <a name="shurui">shurui</a> | 種類 | 花色 | | |
+| <a name="shurui">shurui</a> | 種類 | 花色 | type | |
 | <a name="manzu">manzu</a> | 萬 | 万 | character | 程序中使用`manzu`来用表示[手牌](#tehai)中有哪些[万子](#manzu)，用`manzu9`来表示1到9万各有几张。<br>In programming, `manzu` is used to list what [manzu](#manzu) are there in the [tehai](#tehai), and `manzu9` is used to list how many iiman to chuuman are there. |
 | <a name="pinzu">pinzu</a> | 筒 | 筒<br>饼 | dot | 程序中使用`pinzu`来用表示[手牌](#tehai)中有哪些[筒子](#pinzu)，用`pinzu9`来表示1到9筒各有几张。<br>In programming, `pinzu` is used to list what [pinzu](#pinzu) are there in the [tehai](#tehai), and `pinzu9` is used to list how many from iipin to chuupin are there. |
 | <a name="soozu">soozu</a> | 索 | 索<br>条 | bamboo | 程序中使用`soozu`来用表示[手牌](#tehai)中有哪些[索子](#soozu)，用`soozu9`来表示1到9索各有几张。<br>In programming, `soozu` is used to list what [soozu](#soozu) are there in the [tehai](#tehai), and `soozu9` is used to list how many from iisoo to chuusoo are there. |
@@ -333,6 +332,22 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 | <a name="fu">fu</a> | 符 | 符 | | |
 | <a name="fusuu">fusuu</a> | 符数 | 符数 | | |
 | <a name="tensuu">tensuu</a> | 点数 | 分数 | score | |
+| | | | | |
+| <a name="koyaku">koyaku</a> | 古役 | 古役 | | |
+| <a name="tsubamekaeshi">tsubamekaeshi</a> | 燕返し | 燕返 | | |
+| <a name="kanfuri">kanfuri</a> | 槓振り | 杠振 | | |
+| <a name="shiiaruraotai">shiiaruraotai</a> | 十二落抬 | 全求人 | | 与国标麻将的全求人不同，也可[自摸和](#tsumohoo)。<br>[Tsumohoo](#tsumohoo) is also OK, which is different from the Chinese mahjong. |
+| <a name="uumensai">uumensai</a> | 五門斉 | 五门齐 | all types | |
+| <a name="sanrenkoo">sanrenkoo</a> | 三連刻 | 三连刻 | three consecutive triplets | |
+| <a name="isshokusanjun">isshokusanjun</a> | 一色三順 | 一色三同顺 | three identical sequences | |
+| <a name="iipinmooyue">iipinmooyue</a> | 一筒摸月 | 一筒摸月 | | |
+| <a name="chuupinraoyui">chuupinraoyui</a> | 九筒撈鱼 | 九筒捞鱼 | | |
+| <a name="renhoo">renhoo</a> | 人和 | 人和 | blessing of Man | |
+| <a name="daisharin">daisharin</a> | 大車輪 | 大车轮 | the bigwheel | |
+| <a name="daichikurin">daichikurin</a> | 大竹林 | 大竹林 | | |
+| <a name="daisuurin">daisuurin</a> | 大数隣 | 大数邻 | | |
+| <a name="ishinouenimosannen">ishinouenimosannen</a> | 石の上にも三年 | 石上三年 | | |
+| <a name="daichisei">daichisei</a> | 大七星 | 大七星 | | |
 
 ## 版本更新 What's New
 
@@ -401,6 +416,13 @@ June 2, 2019
 1. 修复几个[役](#yaku)的判断错误。  
 Fixed bugs of the misjudgments of several [yaku](#yaku).
 
+### version 2.1
+2019年6月6日  
+June 6, 2019
+
+1. 加入部分[古役](#koyaku)。  
+Added some [koyaku](#koyaku).
+
 ## 已知问题 Known issues
 
 [i1]: https://img.shields.io/badge/issue-solved-brightgreen.svg
@@ -434,7 +456,7 @@ When inputting [tehai](#tehai), if it has input that can not be understood by th
     * 可以用`w`表示[万](#manzu)，但不能用`t`表示[筒](#pinzu)或[条](#soozu)。  
     `w` is for [wanzu](#manzu), but `t` is not for [tonzu](#pinzu) or [tiaozi](#soozu).
         * 也可以用汉字`万`、`萬`，`筒`、`饼`、`餠`、`餅`，`索`、`条`、`條`。  
-        Kanji `万`, `萬`, `筒`, `饼`, `餠`, `餅`, `索`, `条`, `條` can also be used. (Not in the English language mode.)
+        Kanji `万`, `萬`, `筒`, `饼`, `餠`, `餅`, `索`, `条`, `條` can also be used.
     * 不能用`T`表示[东](#ton)或[中](#chun)；不能用`N`（[北](#pee)）表示[南](#nan)；不能用`S`（[南](#nan)）表示[西](#shaa)；不能用`P`（[发](#hatsu)）表示[北](#pee)。  
     `T` is not for [ton](#ton) or [chun](#chun); `N` is for [north](#pee) instead of [nan](#nan); `S` is for [south](#nan) instead of [shaa](#shaa); `P` is for [hatsu](#hatsu) instead of [pee](#pee).
         * 可以用`D`表示[白](#hatsu)；可以用`H`或`R`表示[发](#hatsu)。  
@@ -463,18 +485,20 @@ Some [yaku](#yaku) cannot be analyzed accurately.
         [Pinfu](#pinfu). It will be taken as [pinfu](#pinfu), no longer the [jantou](#jantou) is [ton](#ton), [nan](#nan), [shaa](#shaa), or [pee](#pee).
     * 关于[门前清](#menzenchin)。  
     About [menzenchin](#menzenchin).
-        * 不论是否为[门前清](#menzenchin)，都会计算这些[役](#yaku)：[平和](#pinfu)、[一杯口](#iipeekoo)、[七对子](#chiitoitsu)、[二杯口](#ryanpeekoo)、[四暗刻](#suuankoo)、[九莲宝灯](#chuurenpouton)、[纯正九莲宝灯](#junseichuurenpouton)。  
-        No longer it is [menzenchin](#menzenchin) or not, these [yaku](#yaku) will be calculated: [pinfu](#pinfu), [iipeekoo](#iipeekoo), [chiitoitsu](#chiitoitsu), [ryanpeekoo](#ryanpeekoo), [suuankoo](#suuankoo), [chuurenpouton](#chuurenpouton), [junseichuurenpouton](#junseichuurenpouton).
-        * 不论是否为[门前清](#menzenchin)，这些[役](#yaku)都会按照[门前清](#menzenchin)计算[番数](#hansuu)：[一气通贯](#ikkitsuukan)、[三色同顺](#sanshokudoujun)、[混全带幺九](#honchantaiyaochuu)、[纯全带幺九](#junchantaiyaochuu)、[混一色](#honiisoo)、[清一色](#chiniisoo)。  
-        No longer it is [menzenchin](#menzenchin) or not, these [yaku](#yaku)'s [hansuu](#hansuu) will be calculated as [menzenchin](#menzenchin): [ikkitsuukan](#ikkitsuukan), [sanshokudoujun](#sanshokudoujun), [honchantaiyaochuu](#honchantaiyaochuu), [junchantaiyaochuu](#junchantaiyaochuu), [honiisoo](#honiisoo), [chiniisoo](#chiniisoo).
+        * 不论是否为[门前清](#menzenchin)，都会计算这些[役](#yaku)：[平和](#pinfu)、[一杯口](#iipeekoo)、[七对子](#chiitoitsu)、[二杯口](#ryanpeekoo)、[四暗刻](#suuankoo)、[九莲宝灯](#chuurenpouton)、[纯正九莲宝灯](#junseichuurenpouton)、[大车轮](#daisharin)、[大竹林](#daichikurin)、[大数邻](#daisuurin)。  
+        No longer it is [menzenchin](#menzenchin) or not, these [yaku](#yaku) will be calculated: [pinfu](#pinfu), [iipeekoo](#iipeekoo), [chiitoitsu](#chiitoitsu), [ryanpeekoo](#ryanpeekoo), [suuankoo](#suuankoo), [chuurenpouton](#chuurenpouton), [junseichuurenpouton](#junseichuurenpouton), [daisharin](#daisharin), [daichikurin](#daichikurin), [daisuurin](#daisuurin).
+        * 不论是否为[门前清](#menzenchin)，这些[役](#yaku)都会按照[门前清](#menzenchin)计算[番数](#hansuu)：[一气通贯](#ikkitsuukan)、[三色同顺](#sanshokudoujun)、[混全带幺九](#honchantaiyaochuu)、[纯全带幺九](#junchantaiyaochuu)、[混一色](#honiisoo)、[清一色](#chiniisoo)，[一色三顺](#isshokusanjun)。  
+        No longer it is [menzenchin](#menzenchin) or not, these [yaku](#yaku)'s [hansuu](#hansuu) will be calculated as [menzenchin](#menzenchin): [ikkitsuukan](#ikkitsuukan), [sanshokudoujun](#sanshokudoujun), [honchantaiyaochuu](#honchantaiyaochuu), [junchantaiyaochuu](#junchantaiyaochuu), [honiisoo](#honiisoo), [chiniisoo](#chiniisoo), [isshokusanjun](#isshokusanjun).
+        * 不论是否为[门前清](#menzenchin)，都不会计算这些[役](#yaku)：[十二落抬](#shiiaruraotai)。  
+        No longer it is [menzenchin](#menzenchin) or not, these [yaku](#yaku) will not be calculated: [shiiaruraotai](#shiiaruraotai).
     * 关于[杠子](#kantsu)。  
     About [kantsu](#kantsu).
         * 不能判断下列[役](#yaku)：[三杠子](#sankantsu)、[四杠子](#suukantsu)。  
         Cannot analyze these [yaku](#yaku): [sankantsu](#sankantsu), [suukantsu](#suukantsu).
     * 关于偶然役。  
     About guuzenyaku.
-        * 不能判断下列[役](#yaku)：[立直](#riichi)、[一发](#ippatsu)、[门前清自摸和](#menzenchintsumohoo)、[海底摸月](#haiteimooyue)、[河底捞鱼](#hooteiraoyui)、[抢杠](#chankan)、[岭上开花](#rinshankaihou)、[双立直](#dabururiichi)、[天和](#tenhou)、[地和](#chiihou)。  
-        Cannot analyze these [yaku](#yaku): [riichi](#riichi), [ippatsu](#ippatsu), [menzenchintsumohoo](#menzenchintsumohoo), [haiteimooyue](#haiteimooyue), [hooteiraoyui](#hooteiraoyui), [chankan](#chankan), [rinshankaihou](#rinshankaihou), [dabururiichi](#dabururiichi), [tenhou](#tenhou), [chiihou](#chiihou)。  
+        * 不能判断下列[役](#yaku)：[立直](#riichi)、[一发](#ippatsu)、[门前清自摸和](#menzenchintsumohoo)、[海底摸月](#haiteimooyue)、[河底捞鱼](#hooteiraoyui)、[抢杠](#chankan)、[岭上开花](#rinshankaihou)、[双立直](#dabururiichi)、[天和](#tenhou)、[地和](#chiihou)，[燕返](#tsubamekaeshi)、[杠振](#kanfuri)、[一筒摸月](#iipinmooyue)、[九筒捞鱼](#chuupinraoyui)、[人和](#renhoo)、[石上三年](#ishinouenimosannen)。  
+        Cannot analyze these [yaku](#yaku): [riichi](#riichi), [ippatsu](#ippatsu), [menzenchintsumohoo](#menzenchintsumohoo), [haiteimooyue](#haiteimooyue), [hooteiraoyui](#hooteiraoyui), [chankan](#chankan), [rinshankaihou](#rinshankaihou), [dabururiichi](#dabururiichi), [tenhou](#tenhou), [chiihou](#chiihou), [tsubamekaeshi](#tsubamekaeshi), [kanfuri](#kanfuri), [iipinmooyue](#iipinmooyue), [chuupinraoyui](#chuupinraoyui), [renhoo](#renhoo), [ishinouenimosannen](#ishinouenimosannen)。  
 6. 此程序暂无英语版。  
 This program has no English version now.  
 ![improving][i3]

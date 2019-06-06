@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/python3
-#python 3.7.2
+#python 3.7.2 3.7.3
 
 """
 translated by Hu Xiangyou on February 20, 2019
+translated by Hu Xiangyou on June 6, 2019
 """
 
 ask_input_tehai="手牌を入力"
@@ -15,6 +16,7 @@ has_0p="「0p」含み。「5p」としました"
 has_0s="「0s」含み。「5s」としました"
 has_invalid_input="無効な入力"
 low_speed="手牌が多すぎ。続行してもよろしいですか？（直接Enterキーを押して続行します）"
+
 yakuman_level_list=('','役満','ダブル役満','トリプル役満','四倍役満','五倍役満','六倍役満','七倍役満')
 kazoeyakuman='数え役満'
 tehai="手牌"
@@ -23,6 +25,7 @@ more_than_14="{}枚の手牌は14枚以上"
 less_than_13="{}枚の手牌は13枚以下（フーロありかも）"
 taapai_or_shaopai="{}枚の手牌は多牌または少牌"
 dora='ドラ'
+
 kokushimusoujuusanmen='国士無双十三面待ち'
 kokushimusou='国士無双'
 chiitoitsu='チートイ'
@@ -62,6 +65,7 @@ daisuushii='大四喜'
 sankantsu='三槓子'
 suukantsu='四槓子'
 beginning_of_the_cosmos='天地創世'
+
 hoora="和了"
 fuu="符"
 han="飜"
@@ -71,7 +75,18 @@ da="打"
 karaten="カラテン"
 tenpai="テンパイ"
 nooten="ノーテン"
+
 colon="："
 ideographic_comma="・"
 question_mark="？"
 time_spent="計算は{}秒を掛かりました"
+
+has_koyaku="古役を有効にしました"
+not_has_koyaku="古役を無効にしました"
+uumensai="五門斉"
+sanrenkoo="サンレンコー"
+isshokusanjun="一色三順"
+daisharin="大車輪"
+daichikurin="大竹林"
+daisuurin="大数隣"
+daichisei="大七星"

@@ -399,6 +399,11 @@ def main(tehai=None,tehai1=None,dahai=False,is_number_only=False):
 				s=zh
 				print(s.language_switched)
 				return
+			elif tehai_lower in ('en','英语','英語'):
+				# s=en
+				# print(s.language_switched)
+				print("English version is not available now. Please try using romaji")
+				return
 			elif tehai_lower in dir(s) and tehai_lower[0]!='_':
 				print(eval('s.'+tehai_lower))
 				return
