@@ -353,27 +353,35 @@ def yaku_and_output(tehai9,hoorakei,did_tsumo,is_karaten,tsumohai,dahai,is_numbe
 				if s.chiitoitsu in yaku and all(i==2 for i in tehai9[2:9]):
 					yaku.append(s.daisharin)
 					is_yakuman=True
+					yaku.remove(s.tanyaochuu)
 					yaku.remove(s.chiitoitsu)
-					hansuu+=11
+					yaku.remove(s.chiniisoo)
+					hansuu+=4
 			else:
 				#daisuurin
 				if s.chiitoitsu in yaku and all(i==2 for i in tehai9[2:9]):
 					yaku.append(s.daisuurin)
 					is_yakuman=True
+					yaku.remove(s.tanyaochuu)
 					yaku.remove(s.chiitoitsu)
-					hansuu+=11
+					yaku.remove(s.chiniisoo)
+					hansuu+=4
 				#daisharin
 				if s.chiitoitsu in yaku and all(i==2 for i in tehai9[12:19]):
 					yaku.append(s.daisharin)
 					is_yakuman=True
+					yaku.remove(s.tanyaochuu)
 					yaku.remove(s.chiitoitsu)
-					hansuu+=11
+					yaku.remove(s.chiniisoo)
+					hansuu+=4
 				#daichikurin
 				if s.chiitoitsu in yaku and all(i==2 for i in tehai9[22:29]):
 					yaku.append(s.daichikurin)
 					is_yakuman=True
+					yaku.remove(s.tanyaochuu)
 					yaku.remove(s.chiitoitsu)
-					hansuu+=11
+					yaku.remove(s.chiniisoo)
+					hansuu+=4
 
 			#daichisei
 			if s.chiitoitsu in yaku and all(i==2 for i in tehai9[31:38]):
@@ -427,7 +435,7 @@ def main(tehai=None,tehai1=None,dahai=False,is_number_only=False):
 				return
 			elif tehai_lower in ("about","关于"):
 				print()
-				print("胡祥又 Hu Xiangyou\nversion 2.0.1\n\nversion 0.0 December 17, 2018\nversion 1.0 February 9, 2019\nversion 1.1 February 20, 2019\nversion 1.2 March 20, 2019\nversion 2.0 April 14, 2019")
+				print("胡祥又 Hu Xiangyou\nversion 2.1\n\nversion 0.0 December 17, 2018\nversion 1.0 February 9, 2019\nversion 1.1 February 20, 2019\nversion 1.2 March 20, 2019\nversion 2.0 April 14, 2019\nversion 2.1 June 6, 2019")
 				return
 			elif tehai_lower in ("example","examples","举例","舉例","例","例え","test","tests","测试","測試","テスト"):
 				main(tehai=test.test())
@@ -589,7 +597,7 @@ def main(tehai=None,tehai1=None,dahai=False,is_number_only=False):
 		output_hais(tehai1,is_number_only,False,"\n\n")
 		
 		if any(i>4 for i in tehai9):
-			print(s.more_than_4.format(s.ideographic_comma.join([output_hai(i) for i in range(38) if tehai9[i]>4])))
+			print(s.more_than_4.format(s.ideographic_comma.join([output_hai(i,is_number_only) for i in range(38) if tehai9[i]>4])))
 
 		if haisuu>14:
 			print(s.more_than_14.format(str(haisuu)))

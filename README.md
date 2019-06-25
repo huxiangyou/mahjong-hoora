@@ -227,7 +227,7 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 | <a name="routouhai">routouhai</a> | 老頭牌 | 老头牌 | terminal | |
 | <a name="jihai">jihai</a> | 字牌 | 字牌 | honor | |
 | <a name="kazepai">kazepai</a> | 風牌 | 风牌 | wind | |
-| <a name="sangenpai">sangenpai</a> | 三元牌 | 三元牌 | dragon | |
+| <a name="sangenpai">sangenpai</a> | 三元牌 | 箭牌 | dragon | |
 | <a name="tehai">tehai</a> | 手牌 | 手牌 | hand | |
 | <a name="fuuro">fuuro</a> | 副露 | 鸣牌 | call | |
 | <a name="juntehai">juntehai</a> | 純手牌 | | | 除[鸣牌](#fuuro)外的[手牌](#tehai)。<br>[Tehai](#tehai) except [fuuro](#fuuro) ones. |
@@ -303,7 +303,7 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 | <a name="sanshokudookoo">sanshokudoujun</a> | 三色同順 | 三色三同顺 | mixed triple chow | |
 | <a name="ikkitsuukan">ikkitsuukan</a> | 一気通貫 | 一条龙 | pure straight | |
 | <a name="honchantaiyaochuu">honchantaiyaochuu</a> | 混全帯么九 | 全带幺 | outside hand | |
-| <a name="chiitoitsu">chiitoitsu</a> | 七対子 | 七将 | seven pairs | |
+| <a name="chiitoitsu">chiitoitsu</a> | 七対子 | 七对 | seven pairs | |
 | <a name="toitoihoo">toitoihoo</a> | 対々和 | 碰碰和 | all pungs | |
 | <a name="sanankoo">sanankoo</a> | 三暗刻 | 三暗刻 | three concealed pungs | |
 | <a name="honroutou">honroutou</a> | 混老頭 | 混老头 | all terminals and honors | |
@@ -522,6 +522,9 @@ I used the following input to test. In `version 1.2`, the full calculation time 
 
 输入：Input:
 `11111111111122222222222233333333333344444444444455555555555666666777777888888999999`
+
+文件`test_performance.txt`中记录了完整的输出。  
+The full output is in the file `test_performance.txt`.
 
 ## 彩蛋 Easter eggs
 
