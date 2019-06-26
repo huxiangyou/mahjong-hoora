@@ -24,7 +24,7 @@ s=zh # change "zh" to other language if you need: romaji, kanji, katakana, ja, z
 
 has_koyaku=False
 
-def output_hai(tehai1,is_number_only=False):
+def output_hai(tehai1:int,is_number_only=False):
 	if not is_number_only:
 		if tehai1<30:
 			return str(tehai1%10)+('m','p','s')[tehai1//10]
@@ -33,7 +33,7 @@ def output_hai(tehai1,is_number_only=False):
 	else:
 		return str(tehai1)
 
-def output_hais(tehai1,is_number_only=False,traditional=False,end=""):
+def output_hais(tehai1:list,is_number_only=False,traditional=False,end=""):
 	if not is_number_only:
 		has_manzu=any(i in tehai1 for i in range(1,10))
 		has_pinzu=any(i in tehai1 for i in range(11,20))
@@ -90,7 +90,7 @@ def output_hais(tehai1,is_number_only=False,traditional=False,end=""):
 				print(i,end="")
 	print(end=end)
 
-def yaku_and_output(tehai9,hoorakei,did_tsumo,is_karaten,tsumohai,dahai,is_number_only):
+def yaku_and_output(tehai9:list,hoorakei:list,did_tsumo:bool,is_karaten:bool,tsumohai:int,dahai:int,is_number_only=False):
 	yaku=[]
 	hansuu=0
 	is_yakuman=False
@@ -106,11 +106,6 @@ def yaku_and_output(tehai9,hoorakei,did_tsumo,is_karaten,tsumohai,dahai,is_numbe
 		is_yakuman=True
 
 	elif sum(tehai9)<=14:
-
-		#chiitoitsu
-		if hoorakei[0][0]=='t':
-			yaku.append(s.chiitoitsu)
-			hansuu+=2
 
 		#tanyaochuu
 		if sum(tehai9)==14 and not tehai9[1] and not tehai9[9] and not tehai9[11] and not tehai9[19] and not tehai9[21] and not tehai9[29] and not any(tehai9[31:]):
@@ -170,13 +165,18 @@ def yaku_and_output(tehai9,hoorakei,did_tsumo,is_karaten,tsumohai,dahai,is_numbe
 			yaku.append(s.iipeekoo)
 			hansuu+=1
 
+		#chiitoitsu
+		if hoorakei[0][0]=='t':
+			yaku.append(s.chiitoitsu)
+			hansuu+=2
+
 		#sanshokudoujun
-		if any(['s',i,i+1,i+2] in hoorakei and ['s',i+10,i+11,i+12] in hoorakei and ['s',i+20,i+21,i+22] in hoorakei for i in range(1,8)):
+		if any(all(['s',i+j,i+1+j,i+2+j] in hoorakei for j in (0,10,20)) for i in range(1,8)):
 			yaku.append(s.sanshokudoujun)
 			hansuu+=2#not counting kuisagari
 
 		#ikkitsuukan
-		if any(['s',1+i,2+i,3+i] in hoorakei and ['s',4+i,5+i,6+i] in hoorakei and ['s',7+i,8+i,9+i] in hoorakei for i in (0,10,20)):
+		if any(all(['s',1+j+i,2+j+i,3+j+i] in hoorakei for j in (0,3,6)) for i in (0,10,20)):
 			yaku.append(s.ikkitsuukan)
 			hansuu+=2#not counting kuisagari
 
@@ -409,9 +409,7 @@ def yaku_and_output(tehai9,hoorakei,did_tsumo,is_karaten,tsumohai,dahai,is_numbe
 		print(" "+s.kazoeyakuman+"("+str(hansuu)+s.han+")",end=s.colon)
 	elif hansuu>0:
 		print(str(hansuu).rjust(3)+s.han,end=s.colon)
-	for j in yaku:
-		print(j,end=(s.ideographic_comma if yaku.index(j)!=len(yaku)-1 else ""))
-	print()
+	print(s.ideographic_comma.join(yaku))
 
 	return hansuu
 
@@ -597,7 +595,7 @@ def main(tehai=None,tehai1=None,dahai=False,is_number_only=False):
 		output_hais(tehai1,is_number_only,False,"\n\n")
 		
 		if any(i>4 for i in tehai9):
-			print(s.more_than_4.format(s.ideographic_comma.join([output_hai(i,is_number_only) for i in range(38) if tehai9[i]>4])))
+			print(s.more_than_4.format(s.ideographic_comma.join([output_hai(i,is_number_only) for i in range(10 if is_number_only else 38) if tehai9[i]>4])))
 
 		if haisuu>14:
 			print(s.more_than_14.format(str(haisuu)))
@@ -649,70 +647,71 @@ def main(tehai=None,tehai1=None,dahai=False,is_number_only=False):
 			is_hoora=True
 			hoorakeis.append([['j',tehai9.index(2),tehai9.index(2),None]]+[['tp',i,None,None] for i in range(38) if tehai9[i]==1])
 			hansuu.append(yaku_and_output(tehai9,hoorakeis[-1],did_tsumo,is_karaten,tsumohai,dahai,is_number_only))
+		else:
 
-		#chiitoitsu
-		if haisuu==14 and tehai9.count(2)==7:
-			is_hoora=True
-			hoorakeis.append([['t',i,i,None] for i in range(38) if tehai9[i]==2])
-			hansuu.append(yaku_and_output(tehai9,hoorakeis[-1],did_tsumo,is_karaten,tsumohai,dahai,is_number_only))
+			#chiitoitsu
+			if haisuu==14 and tehai9.count(2)==7:
+				is_hoora=True
+				hoorakeis.append([['t',i,i,None] for i in range(10 if is_number_only else 38) if tehai9[i]==2])
+				hansuu.append(yaku_and_output(tehai9,hoorakeis[-1],did_tsumo,is_karaten,tsumohai,dahai,is_number_only))
 
-		#analyse tehai
-		#jantou
-		for jantou_i in range(38):
-			if tehai9[jantou_i]>=2:
-				hoorakei_temp=[['j',jantou_i,jantou_i,None]]
-				tehai9_temp=tehai9.copy()
-				tehai9_temp[jantou_i]-=2
-			else:
-				continue
-
-			#mentsu
-			for mentsu_i in range(mentsusuu+1):
-				if tehai9_temp==None:
-					break
-				elif sum(tehai9_temp)==0:
-					is_hoora=True
-					hoorakei_temp.sort()
-					if hoorakei_temp not in hoorakeis:
-						hoorakeis.append(hoorakei_temp)
-						hansuu.append(yaku_and_output(tehai9,hoorakei_temp,did_tsumo,is_karaten,tsumohai,dahai,is_number_only))
-						#if sanrenkoo then change to 3-shuntsu
-						hoorakei_new_num=1
-						while hoorakei_new_num:
-							hoorakei_new_num_temp=hoorakei_new_num
-							hoorakei_new_num=0
-							for hoorakei_i in hoorakeis[-hoorakei_new_num_temp:]:
-								for mentsu_picked_i in hoorakei_i[1:]:
-									if mentsu_picked_i[0]=='k':
-										kootsu_hai=mentsu_picked_i[1]
-										if kootsu_hai%10<=7 and kootsu_hai<30 and ['k',kootsu_hai+1,kootsu_hai+1,kootsu_hai+1] in hoorakei_i and ['k',kootsu_hai+2,kootsu_hai+2,kootsu_hai+2] in hoorakei_i:
-											hoorakei_temp=hoorakei_i.copy()
-											hoorakei_temp.remove(mentsu_picked_i)
-											hoorakei_temp.remove(['k',kootsu_hai+1,kootsu_hai+1,kootsu_hai+1])
-											hoorakei_temp.remove(['k',kootsu_hai+2,kootsu_hai+2,kootsu_hai+2])
-											hoorakei_temp.extend([['s',kootsu_hai,kootsu_hai+1,kootsu_hai+2]]*3)
-											hoorakei_temp.sort()
-											if hoorakei_temp not in hoorakeis:
-												hoorakeis.append(hoorakei_temp)
-												hoorakei_new_num+=1
-												hansuu.append(yaku_and_output(tehai9,hoorakei_temp,did_tsumo,is_karaten,tsumohai,dahai,is_number_only))
+			#analyse tehai
+			#jantou
+			for jantou_i in range(10 if is_number_only else 38):
+				if tehai9[jantou_i]>=2:
+					hoorakei_temp=[['j',jantou_i,jantou_i,None]]
+					tehai9_temp=tehai9.copy()
+					tehai9_temp[jantou_i]-=2
+				else:
 					continue
-				for hai_picked in range(38):
-					if tehai9_temp[hai_picked]==0:
+
+				#mentsu
+				for mentsu_i in range(mentsusuu+1):
+					if tehai9_temp==None:
+						break
+					elif sum(tehai9_temp)==0:
+						is_hoora=True
+						hoorakei_temp.sort()
+						if hoorakei_temp not in hoorakeis:
+							hoorakeis.append(hoorakei_temp)
+							hansuu.append(yaku_and_output(tehai9,hoorakei_temp,did_tsumo,is_karaten,tsumohai,dahai,is_number_only))
+							#if sanrenkoo then change to 3-shuntsu
+							hoorakei_new_num=1
+							while hoorakei_new_num:
+								hoorakei_new_num_temp=hoorakei_new_num
+								hoorakei_new_num=0
+								for hoorakei_i in hoorakeis[-hoorakei_new_num_temp:]:
+									for mentsu_picked_i in hoorakei_i[1:]:
+										if mentsu_picked_i[0]=='k':
+											kootsu_hai=mentsu_picked_i[1]
+											if kootsu_hai%10<=7 and kootsu_hai<30 and ['k',kootsu_hai+1,kootsu_hai+1,kootsu_hai+1] in hoorakei_i and ['k',kootsu_hai+2,kootsu_hai+2,kootsu_hai+2] in hoorakei_i:
+												hoorakei_temp=hoorakei_i.copy()
+												hoorakei_temp.remove(mentsu_picked_i)
+												hoorakei_temp.remove(['k',kootsu_hai+1,kootsu_hai+1,kootsu_hai+1])
+												hoorakei_temp.remove(['k',kootsu_hai+2,kootsu_hai+2,kootsu_hai+2])
+												hoorakei_temp.extend([['s',kootsu_hai,kootsu_hai+1,kootsu_hai+2]]*3)
+												hoorakei_temp.sort()
+												if hoorakei_temp not in hoorakeis:
+													hoorakeis.append(hoorakei_temp)
+													hoorakei_new_num+=1
+													hansuu.append(yaku_and_output(tehai9,hoorakei_temp,did_tsumo,is_karaten,tsumohai,dahai,is_number_only))
 						continue
-					elif tehai9_temp[hai_picked]>=3:#kootsu exists
-						tehai9_temp[hai_picked]-=3
-						hoorakei_temp.append(['k',hai_picked,hai_picked,hai_picked])
-						break
-					elif hai_picked<28 and all(tehai9_temp[hai_picked:hai_picked+3]):#shuntsu exists
-						tehai9_temp[hai_picked]-=1
-						tehai9_temp[hai_picked+1]-=1
-						tehai9_temp[hai_picked+2]-=1
-						hoorakei_temp.append(['s',hai_picked,hai_picked+1,hai_picked+2])
-						break
-					else:#neither kootsu nor shuntsu exists
-						tehai9_temp=None
-						break
+					for hai_picked in range(10 if is_number_only else 38):
+						if tehai9_temp[hai_picked]==0:
+							continue
+						elif tehai9_temp[hai_picked]>=3:#kootsu exists
+							tehai9_temp[hai_picked]-=3
+							hoorakei_temp.append(['k',hai_picked,hai_picked,hai_picked])
+							break
+						elif hai_picked<28 and all(tehai9_temp[hai_picked:hai_picked+3]):#shuntsu exists
+							tehai9_temp[hai_picked]-=1
+							tehai9_temp[hai_picked+1]-=1
+							tehai9_temp[hai_picked+2]-=1
+							hoorakei_temp.append(['s',hai_picked,hai_picked+1,hai_picked+2])
+							break
+						else:#neither kootsu nor shuntsu exists
+							tehai9_temp=None
+							break
 
 		if did_tsumo==False and is_hoora:
 			is_tenpai=True
