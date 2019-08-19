@@ -6,6 +6,7 @@
 translated by Hu Xiangyou on February 20, 2019
 translated by Hu Xiangyou on June 6, 2019
 """
+title="マージャンけいさんき"
 
 ask_input_tehai="テハイを　にゅうりょく"
 help="README.mdを　ごらんください"
@@ -21,8 +22,8 @@ yakuman_level_list=('','やくまん','ダブルやくまん','トリプルや�
 kazoeyakuman='かぞえやくまん'
 tehai="テハイ"
 more_than_4="{}は　4まい　いじょう"
-more_than_14="{}まいの　テハイは　14ま　いいじょう"
-less_than_13="{}まいの　テハイは　13ま　いいか（フーロありかも）"
+more_than_14="{}まいの　テハイは　14まい　いじょう"
+less_than_13="{}まいの　テハイは　13まい　いか（フーロありかも）"
 taapai_or_shaopai="{}まいの　テハイは　ターパイ　または　ショーパイ"
 dora='ドラ'
 
@@ -83,6 +84,7 @@ time_spent="けいさんは　{}びょうを　かかりました"
 
 has_koyaku="こやくを　ゆうこうに　しました"
 not_has_koyaku="こやくを　むこうに　しました"
+koyaku="こやく"
 uumensai="ウーメンサイ"
 sanrenkoo="サンレンコー"
 isshokusanjun="いっしょくさんじゅん"
@@ -90,3 +92,6 @@ daisharin="だいしゃりん"
 daichikurin="だいちくりん"
 daisuurin="だいすうりん"
 daichisei="ダイチセイ"
+
+ok="かくにん"
+clear="クリア"

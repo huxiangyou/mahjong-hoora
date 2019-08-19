@@ -6,6 +6,7 @@
 translated by Hu Xiangyou on February 20, 2019
 translated by Hu Xiangyou on June 6, 2019
 """
+title="麻将计算器"
 
 ask_input_tehai="输入手牌"
 help="输入手牌：m=万，p=筒，s=索，z=字。1~7z=东、南、西、北、白、发、中\n输入test查看示例\n详细内容请查看README.md"
@@ -83,6 +84,7 @@ time_spent="计算耗时{}秒"
 
 has_koyaku="已开启古役"
 not_has_koyaku="已关闭古役"
+koyaku="古役"
 uumensai="五门齐"
 sanrenkoo="三连刻"
 isshokusanjun="一色三同顺"
@@ -90,3 +92,6 @@ daisharin="大车轮"
 daichikurin="大竹林"
 daisuurin="大数邻"
 daichisei="大七星"
+
+ok="确定"
+clear="清空"

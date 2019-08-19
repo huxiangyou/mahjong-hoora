@@ -8,8 +8,8 @@ This document is in Chinese and English. The proper nouns in English use Romaji 
 
 ## 概况 Overview
 
-![version: 2.1](https://img.shields.io/badge/version-2.1-lightgrey.svg)
-![python 3.7.1 3.7.2 3.7.3](https://img.shields.io/badge/python-3.7.1%20|%203.7.2%20|%203.7.3-blue.svg?logo=python)  
+![version: 3.0.1](https://img.shields.io/badge/version-2.1-lightgrey.svg)
+![python 3.7](https://img.shields.io/badge/python-3.7-blue.svg?logo=python)  
 ![tests: passed](https://img.shields.io/badge/tests-passed-brightgreen.svg)
 ![checks: passed](https://img.shields.io/badge/checks-passed-brightgreen.svg)
 ![build: passing](https://img.shields.io/badge/build-passing-brightgreen.svg)  
@@ -28,13 +28,15 @@ An application that checks whether it's [tenpai](#tenpai) and [hoora](#hoora) of
 `version 1.1` 胡祥又写于2019年2月20日；  
 `version 1.2` 胡祥又写于2019年3月20日；  
 `version 2.0` 胡祥又写于2019年4月14日；  
-`version 2.1` 胡祥又写于2019年6月6日。  
+`version 2.1` 胡祥又写于2019年6月6日；  
+`version 3.0` 胡祥又写于2019年7月1日。  
 `version 0.0` coded by Hu Xiangyou on December 17, 2018;  
 `version 1.0` coded by Hu Xiangyou on February 9, 2019;  
 `version 1.1` coded by Hu Xiangyou on February 20, 2019;  
 `version 1.2` coded by Hu Xiangyou on March 20, 2019;  
 `version 2.0` coded by Hu Xiangyou on April 14, 2019;  
-`version 2.1` coded by Hu Xiangyou on June 6, 2019.
+`version 2.1` coded by Hu Xiangyou on June 6, 2019;  
+`version 3.0` coded by Hu Xiangyou on July 1, 2019.
 
 ## 注意 Note
 
@@ -47,13 +49,17 @@ This program can only analyze the [tenpai](#tenpai) and [hoora](#hoora), but not
 * `mahjong20.py` (`version 2.0`)
 * `mahjong201.py` (`version 2.0.1`)
 * `mahjong210.py` (`version 2.1`)
+* `mahjong301.py` (`version 3.0.1`)
 * `mahjong201.exe` (`version 2.0.1`)（可执行文件）(Executable file)
 * `mahjong210.exe` (`version 2.1`)（可执行文件）(Executable file)
+* `mahjong301.exe` (`version 3.0.1`)（可执行文件）(Executable file)
 * `test.py` （测试库）(Test database)
+* `test3.py` （测试库）(Test database)
 * `lang\romaji`, `lang\kanji`, `lang\katakana`, `lang\ja`, `lang\zh` （语言库）(Language databases)
 * `sansoo.png` （图标原图）(Original picture of the icon)
 * `sansoo.ico` （图标）(The icon)
 * `README.md` （说明文件）(Description file)
+* `README210.md` （`version 2.1`说明文件）(Description file)
 * `算法.png` （编写程序时打的草稿，中文，2019年2月9日）(A draft I did when I was programming, in Chinese, February 9, 2019)
 * `test_performance.txt` （测试性能时做的测试，2019年4月14日）(A test when tesing the performance, April 14, 2019)
 
@@ -61,24 +67,24 @@ This program can only analyze the [tenpai](#tenpai) and [hoora](#hoora), but not
 
 * 如果你完全不懂什么GitHub啊什么Python啊而却又想使用此程序：  
 If you don't know anything about GitHub or Python or something, but want to use this application:
-    * 点击[这里](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong210.exe)下载程序。在电脑上直接打开运行。  
-    Click [here](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong210.exe) to download the program. Directly open it on a computer.
-    * 如果你不需要`version 2.1`中的[新功能](#version-2.1)，点击[这里](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong201.exe)下载之前的版本`version 2.0.1`。  
-    If you don't need the [new functions](#version-2.1) in `version 2.1`, click [here](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong201.exe) to download the older `version 2.0.1`.
-    * 程序默认为简体中文（因为我说中文）。如果需要切换至其他语言，在输入[手牌](#tehai)的地方，直接输入语言对应的代码。
+    * 点击[这里](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong301.exe)下载程序。在电脑上直接打开运行。  
+    Click [here](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong301.exe) to download the program. Directly open it on a computer.
+    * 程序默认为简体中文（因为我说中文）。
         * 现提供的语言如下：
             * `zh` 中文（简体）
             * `romaji` 日语（罗马字）
             * `kanji` 日语（汉字）
             * `katakana` 日语（片假名）
             * `ja` 日语（通常用语）
-    * The program defaults to Simplified Chinese (because I speak Chinese). If you need to switch to another language, input the code of other languages directly at where you input the [tehai](#tehai).
+            * `en` 英语（未完成）
+    * The program defaults to Simplified Chinese (because I speak Chinese).
         * The languages available are as follows:
             * `zh` Chinese (Simplified)
             * `romaji` Japanese (Romaji)
             * `kanji` Japanese (Kanji)
             * `katakana` Japanese (Katakana)
             * `ja` Japanese (General)
+            * `en` English (Not completed)
 
 下面为程序的使用方法。  
 The following is the instruction on how to use the program.
@@ -89,32 +95,16 @@ The following is the instruction on how to use the program.
     * 同种[花色](#shurui)的[牌](#hai)可以合并输入。如`1233s`表示“一索、二索、三索、三索”。
     * 要一次性输入全部[手牌](#tehai)。例如，输入`1112345678999m`即为[万子](#manzu)[纯正九莲宝灯](junseichuurenpouton)[听牌](#tenpai)时的[手牌](#tehai)； `123m456p789s111zCC`即表示“一二三万、四五六筒、七八九索、东东东、中中”。
     * 注意：不能输入[杠子](#kantsu)；如果手牌中有[杠子](#kantsu)，按[刻子](#kootsu)输入，或者不输入。
-    * 输入完成后，按回车(`Enter`)。
 * Input [tehai](#tehai):
     * Use number `1` to `9` for [suupai](#suupai); and a lower-case letter after the number for [shurui](#shurui), `m` for "[manzu](#manzu)", `p` for "[pinzu](#pinzu)", `s` for "[soozu](#soozu)"。E.g., `3s` means "sansoo".
     * Use `1z` to `7z` for [jihai](#jihai) "[ton](#ton)", "[nan](#nan)", "[shaa](#shaa)", "[pei](#oei)", "[haku](#haku)", "[hatsu](#hatsu)", "[chun](#chun)". Upper-case letters `E`, `S`, `W`, `N`, `P`, `F`, `C` are also for these.
     * [Hai](#hai) with the same [shurui](#shurui) can be input together. E.g., `1233s` for "iisoo, ryansoo, sansoo, sansoo".
     * Enter all [tehai](#tehai) in a line. For example, `1112345678999m` is the [tehai](#tehai) of [manzu](#manzu) [junseichuurenpouton](#junseichuurenpouton) [tenpai](#tenpai); `123m456p789s111zCC` is for "ii-ryan-sanman, suu-uu-roopin, chii-paa-chuusoo, ton-ton-ton, chun-chun".
     * Note: Do not input [kantsu](#kantsu); if [tehai](#tehai) has [kantsu](#kantsu), input it as a [kootsu](#kootsu), or just omit it.
-    * After the input, press `Enter`。
-* 输入`exit`退出。  
-Input `exit` to exit.
-* 输入语言对应的代码来切换语言。
-    * 现提供的语言如下：
-        * `zh` 中文（简体）
-        * `romaji` 日语（罗马字）
-        * `kanji` 日语（汉字）
-        * `katakana` 日语（片假名）
-        * `ja` 日语（通常用语）
-* Input the code of other languages to switch to other languages.
-    * The languages available are as follows:
-        * `zh` Chinese (Simplified)
-        * `romaji` Japanese (Romaji)
-        * `kanji` Japanese (Kanji)
-        * `katakana` Japanese (Katakana)
-        * `ja` Japanese (General)
-* 输入`koyaku`开启[古役](#koyaku)。  
-Input `koyaku` to enable [koyaku](#koyaku).
+* 选择语言来切换语言。  
+Select languages to switch to other languages.
+* 选择[古役](#koyaku)开启[古役](#koyaku)。  
+Select [koyaku](#koyaku) to enable [koyaku](#koyaku).
 * 当输入的[手牌](#tehai)为14张或(3n+2)张时，则判断是否[和了](#hoora)。
     * 如果[和了](#hoora)，则输出[和牌型](#hoorakei)及可能的[役](#yaku)。
     * 如果没有[和了](#hoora)，但已[听牌](#tenpai)，则判断[舍张](#sutehai)是哪张即可[听牌](#tenpai)，并输出[听牌型](#tenpaikei)及可能的[役](#yaku)。
@@ -131,32 +121,33 @@ Input `koyaku` to enable [koyaku](#koyaku).
 程序正确工作的输入输出举例：  
 Examples when the application works fine:
 
+`123m789p45888s33z`
 ```
-输入手牌：123m789p45888s33z
-
 手牌：123m 789p 45888s 西西
 
 听牌 [3s] | 33z 888s 123m 789p 345s |
 听牌 [6s] | 33z 888s 123m 789p 456s |
 
-听牌：3s 6s (0番)
+听牌：
+3s 6s (0番)
 
-**************
+```
 
-输入手牌：345m345p1134567s
-
+`345m345p1134567s`
+```
 手牌：345m 345p 1134567s
 
 听牌 [2s] | 11s 345m 345p 234s 567s |  1番：平和
 听牌 [5s] | 11s 345m 345p 345s 567s |  3番：平和、三色同顺
 听牌 [8s] | 11s 345m 345p 345s 678s |  3番：平和、三色同顺
 
-听牌：2s (1番) 5s 8s (3番)
+听牌：
+2s (1番)
+5s 8s (3番)
+```
 
-**************
-
-输入手牌：1112345678999m
-
+`1112345678999m`
+```
 手牌：1112345678999m
 
 听牌 [1m] | 99m 111m 123m 456m 789m | 两倍役满：一气通贯、纯正九莲宝灯
@@ -169,12 +160,12 @@ Examples when the application works fine:
 听牌 [8m] | 88m 111m 999m 234m 567m | 两倍役满：纯正九莲宝灯
 听牌 [9m] | 11m 999m 123m 456m 789m | 两倍役满：一气通贯、纯正九莲宝灯
 
-听牌：1m 2m 3m 4m 5m 6m 7m 8m 9m (两倍役满)
+听牌：
+1m 2m 3m 4m 5m 6m 7m 8m 9m (两倍役满)
+```
 
-**************
-
-输入手牌：22223333444457m
-
+`22223333444457m`
+```
 手牌：22223333444457m
 
 没有和了
@@ -194,11 +185,8 @@ Examples when the application works fine:
 打 [7m] 听牌 [5m] | 55m 222m 333m 444m 234m |  9番：断幺九、三暗刻、清一色
 打 [7m] 听牌 [5m] | 55m 234m 234m 234m 234m | 10番：断幺九、二杯口、清一色
 打 [7m] 听牌 [6m] | 44m 222m 333m 234m 456m |  7番：断幺九、清一色
-
-**************
-
-输入手牌：exit
 ```
+
 * 输入`test`来从测试库中随机取出一项测试。  
 Input `test` to pick one test from the test database to test.
 
@@ -351,21 +339,21 @@ Note: Some of the words below are verbs. Some of the words below are not used in
 
 ## 版本更新 What's New
 
-### version 0.0
+### `version 0.0`
 2018年12月17日  
 December 17, 2018
 
 1. 完成程序框架。  
 Built the frame of the program.
 
-### version 1.0
+### `version 1.0`
 2019年2月9日  
 February 9, 2019
 
 1. 完成程序。  
 Completed.
 
-### version 1.1
+### `version 1.1`
 2019年2月20日  
 February 20, 2019
 
@@ -376,7 +364,7 @@ Added languages.
 3. 增加了一个彩蛋。参见[彩蛋](#彩蛋-easter-eggs)。  
 Added an easter egg. Check [Easter eggs](#彩蛋-easter-eggs).
 
-### version 1.2
+### `version 1.2`
 2019年3月20日  
 March 20, 2019
 
@@ -385,14 +373,14 @@ Switchable languages.
 2. 支持更多种[手牌](#tehai)输入表示方法。  
 Supported more ways to input [tehai](#tehai).
 
-### version 1.2.1
+### `version 1.2.1`
 2019年4月9日  
 April 9, 2019
 
 1. 一个很小的优化。  
 A very small improvement.
 
-### version 2.0
+### `version 2.0`
 2019年4月14日  
 April 14, 2019
 
@@ -403,7 +391,7 @@ Added the test function. A [tehai](#tehai) can be randomly generated for testing
 3. 增加计时功能。当计算耗时超过1秒时，显示计算用时。  
 Added the timing function. When the calculation takes more than 1 second, the calculation time will be displayed.
 
-### version 2.0.1
+### `version 2.0.1`
 2019年4月21日  
 April 21, 2019
 
@@ -416,12 +404,19 @@ June 2, 2019
 1. 修复几个[役](#yaku)的判断错误。  
 Fixed bugs of the misjudgments of several [yaku](#yaku).
 
-### version 2.1
+### `version 2.1`
 2019年6月6日  
 June 6, 2019
 
 1. 加入部分[古役](#koyaku)。  
 Added some [koyaku](#koyaku).
+
+### `version 3.0`
+2019年7月1日
+July 1, 2019
+
+1. 更改为窗口视图。  
+Change to window view.
 
 ## 已知问题 Known issues
 
@@ -471,12 +466,12 @@ When inputting [tehai](#tehai), if it has input that can not be understood by th
     Full-width numbers (`０`, `１`, `２`, `３`, `４`, `５`, `６`, `７`, `８`, `９`)  and full-width English letters (`ｍ`, `ｐ`, `ｓ`, etc.) can be used.
 4. [听牌型](#tenpaikei)或[和牌型](#hoorakei)的输出顺序没有规律。  
 The order of [tenpaikei](#tenpaikei) or [hoorakei](#hoorakei) outputs are not regular.  
-![improving][i4]
+![not to be solved][i4]
     * 在`version 1`中，[听牌型](#tenpaikei)或[和牌型](#hoorakei)是按照[雀头](#jantou)和[面子](#mentsu)排序并输出的。但这样会非常占用内存，导致计算时间变长。在`version 2`中，取消了这种输出方式，改为按照计算顺序输出。  
     In `version 1`, [tenpaikei](#tenpaikei) or [hoorakei](#hoorakei) are output sorted by [jantou](#jantou) and [mentsu](#mentsu). But this will take up a lot of memory, which will make the calculation time longer. In `version 2`, this output mode was canceled, and outputs are in the order of calculation.
 5. 此程序不能准确分析部分[役](#yaku)。  
 Some [yaku](#yaku) cannot be analyzed accurately.  
-![improving][i4]
+![not to be solved][i4]
     * 关于[场风](#chanfon)和[自风](#menfon)。  
     About [chanfon](#chanfon) or the [menfon](#menfon).
         * [役牌](#yakuhai)中的[东](#ton)、[南](#nan)、[西](#shaa)、[北](#pee)。只要[手牌](#tehai)中出现了[役牌](#yakuhai)的[刻子](#kootsu)，就会被判断为[役牌](#yakuhai)。但当同时出现了多个[场风](#chanfon)和[自风](#menfon)时，最多只会计2个。同时，[连风牌](#renfonpai)只会计1次。  
@@ -517,8 +512,8 @@ You can use Chinese, English or Japanese to report.
 `version 2.0`后，性能已有大幅改善。此处不再赘述。  
 After `version 2.0`, performance has dramatically improved. So I won't go into details here.
 
-我使用如下输入进行测试。在`version 1.2`中，完整计算时间为数分钟；而在`version 2.0`中，只需数秒。  
-I used the following input to test. In `version 1.2`, the full calculation time is a few minutes; in `version 2.0,` it takes only a few seconds.
+我使用如下输入进行测试。在`version 1.2`中，完整计算时间为数分钟；而在`version 2.0`中，只需数秒；在`version 3.0`中，需少于1秒。  
+I used the following input to test. In `version 1.2`, the full calculation time is a few minutes; in `version 2.0`, it takes only a few seconds; in `version 3.0`, less than 1 second.
 
 输入：Input:
 `11111111111122222222222233333333333344444444444455555555555666666777777888888999999`

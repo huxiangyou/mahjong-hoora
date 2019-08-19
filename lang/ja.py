@@ -6,6 +6,7 @@
 translated by Hu Xiangyou on February 20, 2019
 translated by Hu Xiangyou on June 6, 2019
 """
+title="麻雀計算機"
 
 ask_input_tehai="手牌を入力"
 help="README.mdをご覧ください"
@@ -83,6 +84,7 @@ time_spent="計算は{}秒を掛かりました"
 
 has_koyaku="古役を有効にしました"
 not_has_koyaku="古役を無効にしました"
+koyaku="古役"
 uumensai="五門斉"
 sanrenkoo="サンレンコー"
 isshokusanjun="一色三順"
@@ -90,3 +92,6 @@ daisharin="大車輪"
 daichikurin="大竹林"
 daisuurin="大数隣"
 daichisei="大七星"
+
+ok="確認"
+clear="クリア"
