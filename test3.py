@@ -9,7 +9,7 @@ Hu Xiangyou, April 27, 2019
 import random
 
 def test():
-	test_=random.choice((
+	return random.choice((
 		"1112345678999m",#junseichuurenpouton
 		"19m19p19s1234567z",#kokushimusoujuusanmen
 		"19m19p19s1234566z",#kokushimusou
@@ -19,7 +19,7 @@ def test():
 		"2223334446668s",#ryuuiisoo suankootanki
 		"11p11155566677z",#shousangen or daisangen
 		"1122334455667z",#daichisei
-		"1234445677889p",#from majsoul 2018 TOP 14 by Yezhicha
+		"1234445677889p",#from majsoul 2018 TOP 14 by Yezicha
 		"22266688m22p222s",#from majsoul 2018 TOP 5 by Longling
 		"22223334445556",
 		"1112233778899",
@@ -34,4 +34,8 @@ def test():
 		"1145141919810",#random numbers
 		"114 514 1919 810 893 931 889 464 364 721",
 	))
-	return test_
+
+def chiniisoo_random():
+	return ''.join(sorted(random.sample(("1","2","3","4","5","6","7","8","9")*4,13)))
+def chiniisoo_random14():
+	return ''.join(sorted(random.sample(("1","2","3","4","5","6","7","8","9")*4,14)))

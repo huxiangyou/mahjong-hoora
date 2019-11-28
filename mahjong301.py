@@ -23,6 +23,8 @@ import tkinter as tk
 from tkinter import ttk
 s=zh
 
+VERSION="3.0.1"
+
 def output_hai(tehai1:int,is_number_only:bool=False,jihai_in_kanji:bool=True)->str:
 	if not is_number_only:
 		if tehai1<30 or not jihai_in_kanji:
@@ -194,7 +196,7 @@ def yaku_and_output(tehai9:list,hoorakei:list,did_tsumo:bool,is_karaten:bool,tsu
 			hansuu+=3#not counting kuisagari
 
 		#junchantaiyaochuu
-		if len(hoorakei)==5 and all(i[1] in (1,11,21,9,19,29) or i[3] in (9,19,29) and i[1]<30 for i in hoorakei) and any(i[0]=='s' for i in hoorakei):
+		if len(hoorakei)==5 and all(i[1] in (1,11,21,9,19,29) or i[3] in (9,19,29) for i in hoorakei) and any(i[0]=='s' for i in hoorakei):
 			yaku.append(s.junchantaiyaochuu)
 			hansuu+=3#not counting kuisagari
 
@@ -311,6 +313,7 @@ def yaku_and_output(tehai9:list,hoorakei:list,did_tsumo:bool,is_karaten:bool,tsu
 
 		if has_koyaku:
 			if is_number_only:
+				#daisuurin
 				if s.chiitoitsu in yaku and all(i==2 for i in tehai9[2:9]):
 					yaku.append(s.daisharin)
 					is_yakuman=True
@@ -375,6 +378,7 @@ def yaku_and_output(tehai9:list,hoorakei:list,did_tsumo:bool,is_karaten:bool,tsu
 
 def main(tehai:str=None,tehai1:list=None,dahai:int=None,is_number_only:bool=False,has_koyaku:bool=False)->str:
 	string=""
+	string_chiniisoo_chart=""
 
 	#input tehai
 	if tehai1==None:
@@ -382,10 +386,19 @@ def main(tehai:str=None,tehai1:list=None,dahai:int=None,is_number_only:bool=Fals
 		if tehai_lower in ("help","帮助","幫助","ヘルプ"):
 			return s.help
 		elif tehai_lower in ("about","关于"):
-			return "胡祥又 Hu Xiangyou\nversion 3.0.0\n\nversion 0.0 December 17, 2018\nversion 1.0 February 9, 2019\nversion 1.1 February 20, 2019\nversion 1.2 March 20, 2019\nversion 2.0 April 14, 2019\nversion 2.1 June 6, 2019\nversion 3.0 July 1, 2019"
+			return "胡祥又 Hu Xiangyou\nversion "+VERSION+"\n\nversion 0.0 December 17, 2018\nversion 1.0 February 9, 2019\nversion 1.1 February 20, 2019\nversion 1.2 March 20, 2019\nversion 2.0 April 14, 2019\nversion 2.1 June 6, 2019\nversion 3.0 July 1, 2019"
 		elif tehai_lower in ("example","examples","举例","舉例","例","例え","test","tests","测试","測試","テスト"):
 			tehai=test3.test()
-			return tehai+"\n\n"+main(tehai=tehai,has_koyaku=has_koyaku)
+			output=main(tehai=tehai,has_koyaku=has_koyaku)
+			return tehai+"\n\n"+output[0],output[1]
+		elif tehai_lower in ("random","随机","隨機","ランダム"):
+			tehai=test3.chiniisoo_random()
+			output=main(tehai=tehai,has_koyaku=has_koyaku)
+			return tehai+"\n\n"+output[0],output[1]
+		elif tehai_lower in ("random14","随机14","隨機14","ランダム14"):
+			tehai=test3.chiniisoo_random14()
+			output=main(tehai=tehai,has_koyaku=has_koyaku)
+			return tehai+"\n\n"+output[0],output[1]
 
 		for i in (' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','{','|','}','~','　'):
 			tehai=tehai.replace(i,'')
@@ -490,6 +503,10 @@ def main(tehai:str=None,tehai1:list=None,dahai:int=None,is_number_only:bool=Fals
 	tehai9=[0]*38
 	for i in tehai1:
 		tehai9[i]+=1
+
+	is_chiniisoo=False
+	if 13<=sum(tehai9) and (sum(tehai9)==sum(tehai9[1:10]) or sum(tehai9)==sum(tehai9[11:20]) or sum(tehai9)==sum(tehai9[21:30])):
+		is_chiniisoo=True
 
 	if haisuu==0:
 		return string
@@ -624,8 +641,14 @@ def main(tehai:str=None,tehai1:list=None,dahai:int=None,is_number_only:bool=Fals
 				agarihais.append(tsumohai)
 				if max(hansuu)>=13:
 					kouten.append(max(hansuu)//13*13)
+					if dahai and is_chiniisoo and tehai1[0]//10==tsumohai//10:
+						string_chiniisoo_chart+=(str(max(hansuu)//13*13))[:5].ljust(3).rjust(5)+"|"
 				else:
 					kouten.append(max(hansuu))
+					if dahai and is_chiniisoo and tehai1[0]//10==tsumohai//10:
+						string_chiniisoo_chart+=(str(max(hansuu)))[:5].ljust(3).rjust(5)+"|"
+		if did_tsumo==False and dahai and (not is_hoora or is_karaten) and is_chiniisoo and tehai1[0]//10==tsumohai//10:
+			string_chiniisoo_chart+="     |"
 
 		if did_tsumo and not is_hoora:
 			if is_beginning_of_the_cosmos:
@@ -633,11 +656,17 @@ def main(tehai:str=None,tehai1:list=None,dahai:int=None,is_number_only:bool=Fals
 			else:
 				string+=s.not_hoora+"\n"
 				#dahai
+				if is_chiniisoo:
+					string_chiniisoo_chart+="\n打\\和 1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9\n"
 				for sutehai_i in range(10 if is_number_only else 38):
 					if sutehai_i in tehai1:
 						tehai1_new=tehai1.copy()
 						tehai1_new.remove(sutehai_i)
-						string+=main(tehai1=tehai1_new,dahai=sutehai_i,is_number_only=is_number_only,has_koyaku=has_koyaku)
+						if is_chiniisoo:
+							string_chiniisoo_chart+=str(sutehai_i%10)+" |"
+						a,b=main(tehai1=tehai1_new,dahai=sutehai_i,is_number_only=is_number_only,has_koyaku=has_koyaku)
+						string+=a
+						string_chiniisoo_chart+=b+"\n"
 
 		if did_tsumo:
 			break
@@ -663,12 +692,13 @@ def main(tehai:str=None,tehai1:list=None,dahai:int=None,is_number_only:bool=Fals
 				string+=output_hai(agarihai_i,is_number_only)+" "
 		string+="\n"
 
-	if not dahai and did_tsumo==False and not is_tenpai:
-		string+=s.nooten+"\n"
+	#nooten
+	if did_tsumo==False and not dahai and not is_tenpai:
+		string+=s.nooten
 
-	return string
+	return string,string_chiniisoo_chart
 
-print("Mahjong Calculator\n胡祥又 Hu Xiangyou\nversion 3.0.0\nJuly 1, 2019")
+print("Mahjong Calculator\n胡祥又 Hu Xiangyou\nversion "+VERSION+"\nJuly 1, 2019")
 
 window=tk.Tk(className=s.title)
 window.geometry()
@@ -677,8 +707,11 @@ window.geometry()
 has_koyaku=tk.BooleanVar()
 
 def fresh_output(event=None):
+	output=main(tehai=e_input.get(),has_koyaku=has_koyaku.get())
+	if type(output)==tuple:
+		output=output[0]+output[1]
 	t_output.delete(1.0,tk.END)
-	t_output.insert(tk.END,main(tehai=e_input.get(),has_koyaku=has_koyaku.get()))
+	t_output.insert(tk.END,output)
 
 def clear_output(event=None):
 	t_output.delete(1.0,tk.END)
