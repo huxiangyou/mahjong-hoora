@@ -8,7 +8,7 @@ This document is in Chinese and English. The proper nouns in English use Romaji 
 
 ## 概况 Overview
 
-![version: 3.0.1](https://img.shields.io/badge/version-2.1-lightgrey.svg)
+![version: 3.0.1](https://img.shields.io/badge/version-3.0.1-lightgrey.svg)
 ![python 3.7](https://img.shields.io/badge/python-3.7-blue.svg?logo=python)  
 ![tests: passed](https://img.shields.io/badge/tests-passed-brightgreen.svg)
 ![checks: passed](https://img.shields.io/badge/checks-passed-brightgreen.svg)
@@ -45,13 +45,7 @@ This program can only analyze the [tenpai](#tenpai) and [hoora](#hoora), but not
 
 ## 文件 Files
 
-* `mahjong.py` (`version 1.2`)（部分内容已不可用）(Part of which is no longer available)
-* `mahjong20.py` (`version 2.0`)
-* `mahjong201.py` (`version 2.0.1`)
-* `mahjong210.py` (`version 2.1`)
 * `mahjong301.py` (`version 3.0.1`)
-* `mahjong201.exe` (`version 2.0.1`)（可执行文件）(Executable file)
-* `mahjong210.exe` (`version 2.1`)（可执行文件）(Executable file)
 * `mahjong301.exe` (`version 3.0.1`)（可执行文件）(Executable file)
 * `test.py` （测试库）(Test database)
 * `test3.py` （测试库）(Test database)
@@ -59,17 +53,16 @@ This program can only analyze the [tenpai](#tenpai) and [hoora](#hoora), but not
 * `sansoo.png` （图标原图）(Original picture of the icon)
 * `sansoo.ico` （图标）(The icon)
 * `README.md` （说明文件）(Description file)
-* `README210.md` （`version 2.1`说明文件）(Description file)
 * `算法.png` （编写程序时打的草稿，中文，2019年2月9日）(A draft I did when I was programming, in Chinese, February 9, 2019)
 * `test_performance.txt` （测试性能时做的测试，2019年4月14日）(A test when tesing the performance, April 14, 2019)
 
 ## 使用方法 Instructions
 
 * 如果你完全不懂什么GitHub啊什么Python啊而却又想使用此程序：  
-If you don't know anything about GitHub or Python or something, but want to use this application:
+  If you don't know anything about GitHub or Python or something, but want to use this application:
     * 点击[这里](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong301.exe)下载程序。在电脑上直接打开运行。  
-    Click [here](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong301.exe) to download the program. Directly open it on a computer.
-    * 程序默认为简体中文（因为我说中文）。
+      Click [here](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong301.exe) to download the program. Directly open it on a computer.
+    * 程序默认为简体中文（因为我说汉语）。
         * 现提供的语言如下：
             * `zh` 中文（简体）
             * `romaji` 日语（罗马字）
@@ -358,7 +351,7 @@ Completed.
 February 20, 2019
 
 1. 改进了[高目](#takame)的输出方式。  
-Improved the way to output [tekame](#takame).
+Mitigated the way to output [tekame](#takame).
 2. 添加了一些语言。  
 Added languages.
 3. 增加了一个彩蛋。参见[彩蛋](#彩蛋-easter-eggs)。  
@@ -421,33 +414,33 @@ Change to window view.
 ## 已知问题 Known issues
 
 [i1]: https://img.shields.io/badge/issue-solved-brightgreen.svg
-[i2]: https://img.shields.io/badge/issue-improved-green.svg
-[i3]: https://img.shields.io/badge/issue-improving-yellowgreen.svg
+[i2]: https://img.shields.io/badge/issue-mitigated-green.svg
+[i3]: https://img.shields.io/badge/issue-mitigating-yellowgreen.svg
 [i4]: https://img.shields.io/badge/issue-not_to_be_solved-red.svg
 
 | | |
 | -- | -- |
 | ![solved][i1] | 此问题已解决。<br>This issue has been solved. |
-| ![improved][i2] | 此问题已尽可能改善。<br>This issue has been improved as much as possible. |
-| ![improving][i3] | 正在尝试改善。<br>I'm trying to improve it. |
+| ![mitigated][i2] | 此问题已尽可能改善。<br>This issue has been mitigated as much as possible. |
+| ![mitigating][i3] | 正在尝试改善。<br>I'm trying to improve it. |
 | ![not to be solved][i4] | 这个问题将不会解决。<br>This issue will not be solved. |
 
 1. 输入[手牌](#tehai)时，不能区分[纯手牌](#juntehai)和[副露](#fuuro)。  
 When inputting [tehai](#tehai), can not distinguish [juntehai](#juntehai) and [fuuro](#fuuro).  
 ![not to be solved][i4]
 2. 输入[手牌](#tehai)时，可能会输入奇怪的符号，而这些符号可能无法被正确处理。  
-When inputting [tehai](#tehai), strange symbols may be input, and these symbols may not be processed correctly.  
-![improved][i2]  
+   When inputting [tehai](#tehai), strange symbols may be input, and these symbols may not be processed correctly.  
+   ![mitigated][i2]  
     * 输入中的下列符号将被忽略：  
     The following symbols in the input will be ignored:  
-    `!` `"` `#` `$` `%` `&` `'` `(` `)` `*` `+` `,` `-` `.` `/` `:` `;` `<` `=` `>` `?` `@` `[` `\` `]` `^` `_` `` ` `` `{` `|` `}` `~`
+     `!` `"` `#` `$` `%` `&` `'` `(` `)` `*` `+` `,` `-` `.` `/` `:` `;` `<` `=` `>` `?` `@` `[` `\` `]` `^` `_` `` ` `` `{` `|` `}` `~`
     * 无法处理的符号将出现提示：  
     A prompt will appear for symbols that can not be processed:  
-    `手牌含有无效输入`  
-    `Tehai has invalid input`
+     `手牌含有无效输入`  
+     `Tehai has invalid input`
 3. 输入[手牌](#tehai)时，如果含有此程序不能理解的输入，则不能正确处理。  
-When inputting [tehai](#tehai), if it has input that can not be understood by this program, it will not be processed correctly.  
-![improved][i2]  
+   When inputting [tehai](#tehai), if it has input that can not be understood by this program, it will not be processed correctly.  
+   ![mitigated][i2]  
     * 可以用`w`表示[万](#manzu)，但不能用`t`表示[筒](#pinzu)或[条](#soozu)。  
     `w` is for [wanzu](#manzu), but `t` is not for [tonzu](#pinzu) or [tiaozi](#soozu).
         * 也可以用汉字`万`、`萬`，`筒`、`饼`、`餠`、`餅`，`索`、`条`、`條`。  
@@ -465,13 +458,13 @@ When inputting [tehai](#tehai), if it has input that can not be understood by th
     * 可以使用全角数字(`０`、`１`、`２`、`３`、`４`、`５`、`６`、`７`、`８`、`９`)和全角英语字母(`ｍ`、`ｐ`、`ｓ`等)。  
     Full-width numbers (`０`, `１`, `２`, `３`, `４`, `５`, `６`, `７`, `８`, `９`)  and full-width English letters (`ｍ`, `ｐ`, `ｓ`, etc.) can be used.
 4. [听牌型](#tenpaikei)或[和牌型](#hoorakei)的输出顺序没有规律。  
-The order of [tenpaikei](#tenpaikei) or [hoorakei](#hoorakei) outputs are not regular.  
-![not to be solved][i4]
+   The order of [tenpaikei](#tenpaikei) or [hoorakei](#hoorakei) outputs are not regular.  
+   ![not to be solved][i4]
     * 在`version 1`中，[听牌型](#tenpaikei)或[和牌型](#hoorakei)是按照[雀头](#jantou)和[面子](#mentsu)排序并输出的。但这样会非常占用内存，导致计算时间变长。在`version 2`中，取消了这种输出方式，改为按照计算顺序输出。  
     In `version 1`, [tenpaikei](#tenpaikei) or [hoorakei](#hoorakei) are output sorted by [jantou](#jantou) and [mentsu](#mentsu). But this will take up a lot of memory, which will make the calculation time longer. In `version 2`, this output mode was canceled, and outputs are in the order of calculation.
 5. 此程序不能准确分析部分[役](#yaku)。  
-Some [yaku](#yaku) cannot be analyzed accurately.  
-![not to be solved][i4]
+   Some [yaku](#yaku) cannot be analyzed accurately.  
+   ![not to be solved][i4]
     * 关于[场风](#chanfon)和[自风](#menfon)。  
     About [chanfon](#chanfon) or the [menfon](#menfon).
         * [役牌](#yakuhai)中的[东](#ton)、[南](#nan)、[西](#shaa)、[北](#pee)。只要[手牌](#tehai)中出现了[役牌](#yakuhai)的[刻子](#kootsu)，就会被判断为[役牌](#yakuhai)。但当同时出现了多个[场风](#chanfon)和[自风](#menfon)时，最多只会计2个。同时，[连风牌](#renfonpai)只会计1次。  
@@ -480,7 +473,7 @@ Some [yaku](#yaku) cannot be analyzed accurately.
         [Pinfu](#pinfu). It will be taken as [pinfu](#pinfu), no longer the [jantou](#jantou) is [ton](#ton), [nan](#nan), [shaa](#shaa), or [pee](#pee).
     * 关于[门前清](#menzenchin)。  
     About [menzenchin](#menzenchin).
-        * 不论是否为[门前清](#menzenchin)，都会计算这些[役](#yaku)：[平和](#pinfu)、[一杯口](#iipeekoo)、[七对子](#chiitoitsu)、[二杯口](#ryanpeekoo)、[四暗刻](#suuankoo)、[九莲宝灯](#chuurenpouton)、[纯正九莲宝灯](#junseichuurenpouton)、[大车轮](#daisharin)、[大竹林](#daichikurin)、[大数邻](#daisuurin)。  
+        * 不论是否为[门前清](#menzenchin)，都会计算这些[役](#yaku)：[平和](#pinfu)、[一杯口](#iipeekoo)、[七对子](#chiitoitsu)、[二杯口](#ryanpeekoo)、[四暗刻](#suuankoo)、[九莲宝灯](#chuurenpouton)、[纯正九莲宝灯](#junseichuurenpouton)，[大车轮](#daisharin)、[大竹林](#daichikurin)、[大数邻](#daisuurin)。  
         No longer it is [menzenchin](#menzenchin) or not, these [yaku](#yaku) will be calculated: [pinfu](#pinfu), [iipeekoo](#iipeekoo), [chiitoitsu](#chiitoitsu), [ryanpeekoo](#ryanpeekoo), [suuankoo](#suuankoo), [chuurenpouton](#chuurenpouton), [junseichuurenpouton](#junseichuurenpouton), [daisharin](#daisharin), [daichikurin](#daichikurin), [daisuurin](#daisuurin).
         * 不论是否为[门前清](#menzenchin)，这些[役](#yaku)都会按照[门前清](#menzenchin)计算[番数](#hansuu)：[一气通贯](#ikkitsuukan)、[三色同顺](#sanshokudoujun)、[混全带幺九](#honchantaiyaochuu)、[纯全带幺九](#junchantaiyaochuu)、[混一色](#honiisoo)、[清一色](#chiniisoo)，[一色三顺](#isshokusanjun)。  
         No longer it is [menzenchin](#menzenchin) or not, these [yaku](#yaku)'s [hansuu](#hansuu) will be calculated as [menzenchin](#menzenchin): [ikkitsuukan](#ikkitsuukan), [sanshokudoujun](#sanshokudoujun), [honchantaiyaochuu](#honchantaiyaochuu), [junchantaiyaochuu](#junchantaiyaochuu), [honiisoo](#honiisoo), [chiniisoo](#chiniisoo), [isshokusanjun](#isshokusanjun).
@@ -495,8 +488,8 @@ Some [yaku](#yaku) cannot be analyzed accurately.
         * 不能判断下列[役](#yaku)：[立直](#riichi)、[一发](#ippatsu)、[门前清自摸和](#menzenchintsumohoo)、[海底摸月](#haiteimooyue)、[河底捞鱼](#hooteiraoyui)、[抢杠](#chankan)、[岭上开花](#rinshankaihou)、[双立直](#dabururiichi)、[天和](#tenhou)、[地和](#chiihou)，[燕返](#tsubamekaeshi)、[杠振](#kanfuri)、[一筒摸月](#iipinmooyue)、[九筒捞鱼](#chuupinraoyui)、[人和](#renhoo)、[石上三年](#ishinouenimosannen)。  
         Cannot analyze these [yaku](#yaku): [riichi](#riichi), [ippatsu](#ippatsu), [menzenchintsumohoo](#menzenchintsumohoo), [haiteimooyue](#haiteimooyue), [hooteiraoyui](#hooteiraoyui), [chankan](#chankan), [rinshankaihou](#rinshankaihou), [dabururiichi](#dabururiichi), [tenhou](#tenhou), [chiihou](#chiihou), [tsubamekaeshi](#tsubamekaeshi), [kanfuri](#kanfuri), [iipinmooyue](#iipinmooyue), [chuupinraoyui](#chuupinraoyui), [renhoo](#renhoo), [ishinouenimosannen](#ishinouenimosannen)。  
 6. 此程序暂无英语版。  
-This program has no English version now.  
-![improving][i3]
+   This program has no English version now.  
+   ![mitigating][i3]
     * 部分名词在英语中没有对应的翻译。  
     Some nouns have no translation in English.
 
@@ -505,12 +498,12 @@ If you find any other issues, plear report at [Issues](https://github.com/huxian
 
 你可以使用中文、英语或日语报告。  
 You can use Chinese, English or Japanese to report.  
-中国語、英語、または日本語で報告してください。
+中国語、英語、あるいは日本語で報告してください。
 
 ## 性能 Performance
 
 `version 2.0`后，性能已有大幅改善。此处不再赘述。  
-After `version 2.0`, performance has dramatically improved. So I won't go into details here.
+After `version 2.0`, performance has dramatically mitigated. So I won't go into details here.
 
 我使用如下输入进行测试。在`version 1.2`中，完整计算时间为数分钟；而在`version 2.0`中，只需数秒；在`version 3.0`中，需少于1秒。  
 I used the following input to test. In `version 1.2`, the full calculation time is a few minutes; in `version 2.0`, it takes only a few seconds; in `version 3.0`, less than 1 second.

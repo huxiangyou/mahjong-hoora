@@ -112,3 +112,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+old/*
+yaku.xlsx
+一杯口 二杯口.png
+混全带幺九.png
+tenpai_check.py

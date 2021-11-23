@@ -400,7 +400,7 @@ def main(tehai:str=None,tehai1:list=None,dahai:int=None,is_number_only:bool=Fals
 			output=main(tehai=tehai,has_koyaku=has_koyaku)
 			return tehai+"\n\n"+output[0],output[1]
 
-		for i in (' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','{','|','}','~','　'):
+		for i in (' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@','[','\\',']','^','_','`','{','|','}','~','　','\n','\r','\t'):
 			tehai=tehai.replace(i,'')
 		if tehai=='':
 			return ''
@@ -657,7 +657,7 @@ def main(tehai:str=None,tehai1:list=None,dahai:int=None,is_number_only:bool=Fals
 				string+=s.not_hoora+"\n"
 				#dahai
 				if is_chiniisoo:
-					string_chiniisoo_chart+="\n打\\和 1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9\n"
+					string_chiniisoo_chart+="\n打\\和 1 |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |\n"
 				for sutehai_i in range(10 if is_number_only else 38):
 					if sutehai_i in tehai1:
 						tehai1_new=tehai1.copy()
@@ -742,7 +742,7 @@ f_output=tk.Frame(window)
 f_top.pack(side=tk.TOP)
 f_output.pack(side=tk.TOP)
 
-e_input=tk.Entry(f_top,font=('Microsoft YaHei Mono',12),width=50)
+e_input=tk.Entry(f_top,font=('等距更纱黑体 SC',12),width=50)
 e_input.bind('<KeyRelease>',fresh_output)
 
 b_ok=tk.Button(f_top,text=s.ok,command=fresh_output,width=9)
@@ -755,7 +755,7 @@ c_lang['value']=("中文","日本語","日本漢字","カタカナ","Romaji","En
 c_lang.current(0)
 c_lang.bind("<<ComboboxSelected>>",set_lang)
 
-t_output=tk.Text(f_output,font=('Microsoft YaHei Mono',12),width=95,height=26)
+t_output=tk.Text(f_output,font=('等距更纱黑体 SC',12),width=95,height=26)
 s_output=tk.Scrollbar(f_output,orient=tk.VERTICAL)
 t_output.config(yscrollcommand=s_output.set)
 s_output.config(command=t_output.yview)
