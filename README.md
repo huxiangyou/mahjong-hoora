@@ -60,8 +60,8 @@ This program can only analyze the [tenpai](#tenpai) and [hoora](#hoora), but not
 
 * 如果你完全不懂什么GitHub啊什么Python啊而却又想使用此程序：  
   If you don't know anything about GitHub or Python or something, but want to use this application:
-    * 点击[这里](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong301.exe)下载程序。在电脑上直接打开运行。  
-      Click [here](https://github.com/huxiangyou/mahjong-hoora/raw/master/mahjong301.exe) to download the program. Directly open it on a computer.
+    * 点击[这里](https://github.com/huxiangyou/mahjong-huliao/releases/download/main/mahjong301.exe)下载程序。在电脑上直接打开运行。  
+      Click [here](https://github.com/huxiangyou/mahjong-huliao/releases/download/main/mahjong301.exe) to download the program. Directly open it on a computer.
     * 程序默认为简体中文（因为我说汉语）。
         * 现提供的语言如下：
             * `zh` 中文（简体）
